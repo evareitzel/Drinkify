@@ -1,24 +1,51 @@
+require 'net/http'
+require 'open-uri'
+require 'json'
+require 'awesome_print'
+
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+
+  class GetRequester
+    URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
   
-  # Add your routes here
-  get "/" do
-    { message: "Welcome to Drinkify!" }.to_json
-  end
+    def get_response_body
+      uri = URI.parse(URL)
+      response = Net::HTTP.get_response(uri)
+      response.body
+    end
+  
+    def parse_json
+      data = JSON.parse(self.get_response_body)
+  
+      drinks = data["drinks"].collect do |obj|
+  
+        [
+          obj["strDrink"], 
+          obj["strGlass"], 
+          obj["strIngredient1"], 
+          obj["strIngredient2"], 
+          obj["strIngredient3"], 
+          obj["strIngredient4"], 
+          obj["strMeasure1"], 
+          obj["strInstructions"]
+        ]
 
-  get "/drinks" do
-     # get all the drinks from the database
-     drinks = Drink.all.order(:name).limit(6)
-    # return a JSON response with an array of all the drink data
-    drinks.to_json
+        # "name" => 
+      end
+    end
+  
+  end
+  
+  data = GetRequester.new
+  ap data.parse_json
 
-    { message: "Drinkify recipes from https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a" }.to_json
-  end
-    # look up the game in the database using its ID
-    # send a JSON-formatted response of the game data
-  get '/drinks/:name' do
-    drink = Drink.find_by(params[:name]) # check
-    drink.to_json
-  end
+  # get resp body
+  # parse json
+  
+  # get '/drinks/:name' do
+  #   drink = Drink.find_by(params[:name]) # check
+  #   drink.to_json
+  # end
 
 end

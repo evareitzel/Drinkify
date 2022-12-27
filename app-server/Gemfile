@@ -1,5 +1,9 @@
 source "https://rubygems.org"
 
+# Great Ruby dubugging companion: pretty print Ruby objects to visualize their structure. Supports custom object formatting via plugins
+# https://github.com/awesome-print/awesome_print
+gem 'awesome_print', '~> 1.8'
+
 # A DSL for quickly creating web applications
 # https://github.com/sinatra/sinatra
 gem "sinatra", "~> 2.1"
