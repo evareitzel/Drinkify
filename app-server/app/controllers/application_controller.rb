@@ -30,8 +30,8 @@ class ApplicationController < Sinatra::Base
           obj["strMeasure1"], 
           obj["strInstructions"]
         ]
-
         # "name" => 
+      
       end
     end
   
