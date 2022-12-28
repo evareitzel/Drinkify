@@ -10,6 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2022_12_28_012319) do
+
+  create_table "drinks", force: :cascade do |t|
+    t.string "name"
+    t.string "glass"
+    t.string "instructions_en"
+    t.string "instructions_sp"
+    t.string "ingredient1"
+    t.string "ingredient2"
+    t.string "ingredient3"
+    t.string "ingredient4"
+    t.string "ingredient5"
+    t.string "measure1"
+    t.string "measure2"
+    t.string "measure3"
+    t.string "measure4"
+    t.string "measure5"
+    t.integer "mixologist_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "mixologists", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
