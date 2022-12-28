@@ -5,8 +5,13 @@ require 'awesome_print'
 
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
+    
+  #   # Add your routes here
+  #   get "/" do
+  #     { message: "Good luck with your project!" }.to_json
+  #   end
 
-  class GetRequester
+    class GetRequester
     URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
   
     def get_response_body
@@ -30,6 +35,7 @@ class ApplicationController < Sinatra::Base
           obj["strMeasure1"], 
           obj["strInstructions"]
         ]
+
         # "name" => 
       
       end
@@ -40,6 +46,16 @@ class ApplicationController < Sinatra::Base
   data = GetRequester.new
   ap data.parse_json
 
+end
+
+
+  # "message": "Welcome to Drinkify!"
+
+  # get '/drinks' do
+  #   data = GetRequester.new
+  #   ap data.parse_json
+  # end
+
   # get resp body
   # parse json
   
@@ -48,4 +64,7 @@ class ApplicationController < Sinatra::Base
   #   drink.to_json
   # end
 
-end
+  # get "/" do
+  #   { message: "<h1>Welcome to our Drinks Recipe app!</h1>"}.to_json
+  #   # { drinks: "https://www.thecocktaildb.com/api/jso;n/v1/1/search.php?f=a"  }.to_json
+  # end

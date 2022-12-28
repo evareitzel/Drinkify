@@ -140,3 +140,6 @@ app-server
  app-client 
   $ cd app-client
   $ npm start
+
+GIT commits 
+  |||
