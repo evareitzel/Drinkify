@@ -8,11 +8,11 @@ class ApplicationController < Sinatra::Base
     
   # Add your routes here
   get "/" do
-    { message: "Welcome to Drinkify!" }.to_json
+    { message: "Welcome to Drinkify! 🥂" }.to_json
   end
 
   get '/drinks' do
-    { message: "Display drink objects here! 🍸"}.to_json
+    { message: "Display drink objects here! 🍸🍸"}.to_json
     # data = GetRequester.new
     # ap data.parse_json
   end

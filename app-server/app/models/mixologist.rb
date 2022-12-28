@@ -1,3 +1,4 @@
-class Mixologist < Sinatra::Base
-  # has_many :drinks
+# class Mixologist < Sinatra::Base
+class Mixologist < ActiveRecord::Base
+  has_many :drinks
 end
