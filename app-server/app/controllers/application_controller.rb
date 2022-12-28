@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
     
   # Add your routes here
   get "/" do
-    { message: "Welcome to Drinkify! A mixologist's best friend 🍹" }.to_json
+    { message: "Welcome to Drinkify! The sharing space for mixologists 🍹" }.to_json
   end
 
   get '/drinks' do
@@ -29,14 +29,20 @@ class ApplicationController < Sinatra::Base
     drink.to_json
   end
 
-  delete '/messages/:id' do # ""
+  delete '/drinks/:id' do # ""
     drink = Drink.find(params[:id])
     drink.destroy
     drink.to_json
   end
 
   get '/users' do
-    { message: "Community members 🥂🍻"}.to_json
+    users = User.all
+    users.to_json
+  end
+
+  post '/users' do
+    user = User.create(name: params[:name])
+    user.to_json
   end
 
   class GetRequester
