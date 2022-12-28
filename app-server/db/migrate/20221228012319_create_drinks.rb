@@ -8,13 +8,13 @@ class CreateDrinks < ActiveRecord::Migration[6.1]
       t.string :ingredient1
       t.string :ingredient2
       t.string :ingredient3
-      t.string :ingredient4
-      t.string :ingredient5
+      # t.string :ingredient4
+      # t.string :ingredient5
       t.string :measure1      
       t.string :measure2
       t.string :measure3
-      t.string :measure4
-      t.string :measure5
+      # t.string :measure4
+      # t.string :measure5
       t.integer :mixologist_id
       t.timestamps
     end
