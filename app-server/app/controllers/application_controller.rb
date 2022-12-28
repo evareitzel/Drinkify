@@ -18,15 +18,26 @@ class ApplicationController < Sinatra::Base
   # data = GetRequester.new
   # ap data.parse_json
 
-  # post '/drinks' do
-  #   drink = Drink.create(name: params[:name], glass: params[:glass])
-  # end
+  post '/drinks' do
+    drink = Drink.create(name: params[:name], instructions_en: params[:instructions_en])
+    drink.to_json
+  end
 
+  patch '/drinks/:id' do # are double quotes needed?
+    drink = Drink.find(params[:id])
+    drink.update(instructions_en: params[:instructions_en])
+    drink.to_json
+  end
+
+  delete '/messages/:id' do # ""
+    drink = Drink.find(params[:id])
+    drink.destroy
+    drink.to_json
+  end
 
   get '/users' do
     { message: "Community members 🥂🍻"}.to_json
   end
-
 
   class GetRequester
     URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
