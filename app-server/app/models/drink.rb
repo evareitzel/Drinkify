@@ -1,4 +1,3 @@
-# class Drink < Sinatra::Base
-class Drink < ActiveRecord::Base
-  # belongs_to :mixologist
+class Drink < ActiveRecord::Base # Sinatra::Base
+  belongs_to :mixologist
 end
