@@ -8,16 +8,27 @@ class ApplicationController < Sinatra::Base
     
   # Add your routes here
   get "/" do
-    { message: "Welcome to Drinkify! 🥂" }.to_json
+    { message: "Welcome to Drinkify! A mixologist's best friend 🍹" }.to_json
   end
 
   get '/drinks' do
-    { message: "Display drink objects here! 🍸🍸"}.to_json
-    # data = GetRequester.new
-    # ap data.parse_json
+    drinks = Drink.all
+    drinks.to_json
+  end
+  # data = GetRequester.new
+  # ap data.parse_json
+
+  # post '/drinks' do
+  #   drink = Drink.create(name: params[:name], glass: params[:glass])
+  # end
+
+
+  get '/users' do
+    { message: "Community members 🥂🍻"}.to_json
   end
 
-    class GetRequester
+
+  class GetRequester
     URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
   
     def get_response_body
@@ -41,7 +52,6 @@ class ApplicationController < Sinatra::Base
           obj["strMeasure1"], 
           obj["strInstructions"]
         ]
-
         # "name" => 
       
       end

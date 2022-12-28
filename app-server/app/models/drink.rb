@@ -1,3 +1,3 @@
 class Drink < ActiveRecord::Base # Sinatra::Base
-  belongs_to :mixologist
+  belongs_to :user
 end

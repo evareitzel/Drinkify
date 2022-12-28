@@ -141,5 +141,3 @@ end
 
 # data = GetRequester.new
 # p data.parse_json
-
-

@@ -15,7 +15,7 @@ class CreateDrinks < ActiveRecord::Migration[6.1]
       t.string :measure3
       t.string :measure4
       t.string :measure5
-      t.integer :mixologist_id
+      t.integer :user_id
       t.timestamps
     end
   end
