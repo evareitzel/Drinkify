@@ -43,8 +43,8 @@ class ApplicationController < Sinatra::Base
   
   end
   
-  data = GetRequester.new
-  ap data.parse_json
+  # data = GetRequester.new
+  # ap data.parse_json
 
 end
 

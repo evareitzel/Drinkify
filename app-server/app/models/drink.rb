@@ -1,3 +1,3 @@
 class Drink < Sinatra::Base
-  belongs_to :mixologist
+  # belongs_to :mixologist
 end
