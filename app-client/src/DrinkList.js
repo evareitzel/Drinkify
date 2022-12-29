@@ -1,16 +1,25 @@
 import Drink from "./Drink";
 
-export default function DrinkList(drinks){
+export default function DrinkList({drinks}){
+  console.log(drinks)
   return(
     <div>
-      <h2>Hi from DrinkList!</h2>
+      <h2>Drinks</h2>
       <ul>
-        <li>drink1</li>
-        <li>drink2</li>
-        {/* {drinks.map(drink => 
-          <Drink />
-        )} */}
+        {drinks.map(drink => (
+          <Drink 
+            key={drink.id}
+            name={drink.name}
+            glass={drink.glass}
+            instructions_en={drink.instructions_en}
+            ingredient1={drink.ingredient1}
+            ingredient2={drink.ingredient2}
+            ingredient3={drink.ingredient3}
+            measure1={drink.measure1}
+          />
+        )
 
+        )}
       </ul>
     </div>
   )

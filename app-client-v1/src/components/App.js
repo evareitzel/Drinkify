@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
-// import Header from "./Header";//unghost
+
 // // import Search from "./Search";
-// import DrinkList from "./DrinkList";
-// // import NewDrink from "./NewDrink";
 
 function App() {
 //   // darkmode
