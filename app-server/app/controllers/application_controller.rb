@@ -66,7 +66,12 @@ class ApplicationController < Sinatra::Base
           obj["strIngredient2"], 
           obj["strIngredient3"], 
           obj["strIngredient4"], 
+          obj["strIngredient5"], 
           obj["strMeasure1"], 
+          obj["strMeasure2"], 
+          obj["strMeasure3"], 
+          obj["strMeasure4"], 
+          obj["strMeasure5"], 
           obj["strInstructions"]
         ]
         # "name" => 

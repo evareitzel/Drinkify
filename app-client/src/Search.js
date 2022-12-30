@@ -1,5 +1,7 @@
 export default function Search(){
   return(
-    <p>🔍 Search</p>
+    <div className="Search-form">
+      <form>🔍 Search</form>
+    </div>
   )
 }

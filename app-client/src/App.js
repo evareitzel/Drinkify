@@ -22,8 +22,8 @@ function App() {
     <div className="App">
       <Header />
       <Search />
-      <DrinkList drinks={drinks}/>
       <NewDrink />
+      <DrinkList drinks={drinks}/>
     </div>
   );
 }

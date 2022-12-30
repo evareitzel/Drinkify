@@ -27,7 +27,13 @@ puts "🌱 Seeding drinks..."
       ingredient1: "Gin",
       ingredient2: "Grand Marnier",
       ingredient3: "Lemon Juice",
-      measure1: "1 3/4 shot"
+      ingredient4: "Grenadine",
+      ingredient5: nil, 
+      measure1: "1 3/4 shot",
+      measure2: "1 Shot",
+      measure3: "1/4 Shot",
+      measure4: "1/8 Shot",
+      measure5: nil
     },
     {
       name: "ABC",
@@ -37,7 +43,13 @@ puts "🌱 Seeding drinks..."
       ingredient1: "Amaretto",
       ingredient2: "Baileys irish cream",
       ingredient3: "Cognac",
-      measure1: "1/3"
+      ingredient4: nil,
+      ingredient5: nil, 
+      measure1: "1/3",
+      measure2: "1/3",
+      measure3: "1/3",
+      measure4: nil,
+      measure5: nil
     },
     {
       name: "Ace",
@@ -47,7 +59,13 @@ puts "🌱 Seeding drinks..."
       ingredient1: "Gin",
       ingredient2: "Grenadine",
       ingredient3: "Heavy cream",
-      measure1: "2 shots"
+      ingredient4: "Milk",
+      ingredient5: "Egg White",
+      measure1: "2 shots",
+      measure2: "1/2 shot",
+      measure3: "1/2 shot",
+      measure4: "1/2 shot",
+      measure5: "1/2 Fresh",
     },
     {    
       name: "ACID",
@@ -57,7 +75,13 @@ puts "🌱 Seeding drinks..."
       ingredient1: "151 proof rum",
       ingredient2: "Wild Turkey",
       ingredient3: nil,
-      measure1: "1 oz Bacardi"
+      ingredient4: nil,
+      ingredient5: nil,
+      measure1: "1 oz Bacardi",
+      measure2: "1 oz",
+      measure3: nil,
+      measure4: nil,
+      measure5: nil,
     }  
   ])
 

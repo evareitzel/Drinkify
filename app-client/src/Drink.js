@@ -1,7 +1,7 @@
 export default function Drink({name, glass, instructions_en, ingredient1, ingredient2, ingredient3, measure1, measure2
 }){
   return(
-    <div className="card">
+    <div className="Card">
       <h2>{name}</h2>
       <p>🥃 {glass}</p>
       <h3>Ingredients</h3>

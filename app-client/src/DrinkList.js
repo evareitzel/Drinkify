@@ -2,10 +2,12 @@ import Drink from "./Drink";
 
 export default function DrinkList({drinks}){
   console.log(drinks)
+  // an I pass keys as "drink" and deconstruct within Drink component?
+  // Add Measure 2, 3, 4
   return(
-    <div>
+    <div> {/* className="DrinkList" */}
       <h2>Drinks</h2>
-      <ul>
+      {/* <ul> */}
         {drinks.map(drink => (
           <Drink 
             key={drink.id}
@@ -17,10 +19,8 @@ export default function DrinkList({drinks}){
             ingredient3={drink.ingredient3}
             measure1={drink.measure1}
           />
-        )
-
-        )}
-      </ul>
+        ))}
+      {/* </ul> */}
     </div>
   )
 }
