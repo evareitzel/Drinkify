@@ -14,6 +14,30 @@ export default function Drink({drink}){
         <li>{measure5} {ingredient5}</li>
       </ul>
       <p>{instructions_en}</p>
+      <a className="App-link" href="#" >
+        Edit drink
+      </a>
+
+      <form >
+          <label className="label">Name 
+          <input className="form-input"
+            // onChange={e => setName(e.target.value)} 
+            placeholder={name}
+            type="text"
+            value={name}
+            // className="form-input"
+          />
+          </label>
+          <label className="label">Instructions
+          <input className="form-input"
+            // onChange={e => setName(e.target.value)} 
+            placeholder={instructions_en}
+            type="text"
+            value={instructions_en}
+            // className="form-input"
+          />
+          </label>
+    </form>
     </div>
   )
 } 

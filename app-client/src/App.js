@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Header from "./Header";
-import Search from "./Search";
+// import Search from "./Search";
 import DrinkList from "./DrinkList";
 import NewDrink from "./NewDrink";
 import './App.css';
@@ -21,7 +21,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Search />
+      {/* <Search /> */}
       <NewDrink />
       <DrinkList drinks={drinks}/>
     </div>

@@ -1,6 +1,8 @@
 .App {
+
+  /* background-color: #282c34; */
   text-align: center;
-  background-color: #282c34;
+  background-color: #212121;
   color: white;
 
 }
@@ -38,4 +40,21 @@
 
 .DrinkList {
   margin: none;
+}
+
+.form-input {
+  /* border: 1px solid white;/* #021aee; */
+  border-radius: 50px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #424242;
+  color: white;
+}
+
+.label{
+  font-size: 14px; 
+  padding: 0 0 0 20px;
 }
