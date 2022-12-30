@@ -2,8 +2,8 @@ import React, { useState } from "react"
 
 export default function NewDrink({ onAddDrink }){ // currentUser
   const [name, setName] = useState("");
-  const [instructions_en, setInstructions_en] = useState("");
-  const [body, setBody] = useState("")
+  // const [instructions_en, setInstructions_en] = useState("");
+  // const [body, setBody] = useState("")
   // ingredient1,
 
   function handleSubmit(e){
@@ -12,19 +12,20 @@ export default function NewDrink({ onAddDrink }){ // currentUser
     fetch("http://localhost:9292/drinks", {
       method: "POST",
       headers: {
-        "Content-Type": "apploication/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         // username: currentUser.username,
         name: name,
-        instructions_en: instructions_en,
+        // instructions_en: instructions_en,
       }),
     })
       .then(r => r.json())
       .then(newDrink => {
         onAddDrink(newDrink);
         setName("");
-        setInstructions_en("")
+        // setInstructions_en("")
+        // setBody("");
       })
   }
 
@@ -44,7 +45,7 @@ export default function NewDrink({ onAddDrink }){ // currentUser
             onChange={e => setName(e.target.value)}
           />
         </label>
-        <label>Instructions
+        {/* <label>Instructions
           <input
             className="Form-input"
             type="text"
@@ -53,7 +54,7 @@ export default function NewDrink({ onAddDrink }){ // currentUser
             value={instructions_en}
             onChange={e => setInstructions_en(e.target.value)}
           />
-        </label>
+        </label> */}
         <button type="submit" className="Button">Add drink</button>
       </form>
 
