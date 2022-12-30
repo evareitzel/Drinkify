@@ -2,9 +2,7 @@ import React, { useState } from "react"
 
 export default function NewDrink({ onAddDrink }){ // currentUser
   const [name, setName] = useState("");
-  // const [instructions_en, setInstructions_en] = useState("");
-  // const [body, setBody] = useState("")
-  // ingredient1,
+  const [instructions_en, setInstructions_en] = useState("");
 
   function handleSubmit(e){
     e.preventDefault();
@@ -17,15 +15,14 @@ export default function NewDrink({ onAddDrink }){ // currentUser
       body: JSON.stringify({
         // username: currentUser.username,
         name: name,
-        // instructions_en: instructions_en,
+        instructions_en: instructions_en,
       }),
     })
       .then(r => r.json())
       .then(newDrink => {
         onAddDrink(newDrink);
         setName("");
-        // setInstructions_en("")
-        // setBody("");
+        setInstructions_en("")
       })
   }
 
@@ -45,7 +42,7 @@ export default function NewDrink({ onAddDrink }){ // currentUser
             onChange={e => setName(e.target.value)}
           />
         </label>
-        {/* <label>Instructions
+        <label>Instructions
           <input
             className="Form-input"
             type="text"
@@ -54,7 +51,7 @@ export default function NewDrink({ onAddDrink }){ // currentUser
             value={instructions_en}
             onChange={e => setInstructions_en(e.target.value)}
           />
-        </label> */}
+        </label>
         <button type="submit" className="Button">Add drink</button>
       </form>
 
