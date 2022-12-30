@@ -9,7 +9,7 @@
 
 .App-header {
   /* background-color: #282c34; */
-  min-height: 25vh;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   /* align-items: center; */
@@ -30,8 +30,12 @@
   border-radius: 50px;
 }
 
+.Button-wrapper {
+  text-align: center;
+}
+
 .Button {
-  background-color: #795548;
+  background-color: #4DD0E1;
   border: none;
   border-radius: 50px;
   color: white;
@@ -40,8 +44,6 @@
   letter-spacing: 1px;
   margin-top: 20px;
   width: 50%;
-  /* text-align: center; */
-  /* justify-content: center; */
 }
 
 .Card {

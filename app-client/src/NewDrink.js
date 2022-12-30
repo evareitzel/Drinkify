@@ -28,9 +28,10 @@ export default function NewDrink({ onAddDrink }){ // currentUser
 
   return(
     <div>
-      <a className="App-link" href="#" >
+      {/* <a className="App-link" href="#" >
         Add new drink
-      </a>
+      </a> */}
+      <h2>Add new drink</h2>
       <form className="Form" onSubmit={handleSubmit}>
         <label>Name
           <input
@@ -52,7 +53,9 @@ export default function NewDrink({ onAddDrink }){ // currentUser
             onChange={e => setInstructions_en(e.target.value)}
           />
         </label>
-        <button type="submit" className="Button">Add drink</button>
+        <div className="Button-wrapper">
+          <button type="submit" className="Button">Add drink</button>
+        </div>
       </form>
 
     </div>

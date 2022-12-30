@@ -7,8 +7,6 @@ import NewDrink from "./NewDrink";
 import './App.css';
 
 function App() {
-
-  // darkmode
   const [drinks, setDrinks] = useState([]);
 //   // const [search, setSearch] = useState("")
 
@@ -22,12 +20,20 @@ function App() {
     setDrinks([...drinks, newDrink]);
   }
 
+  function handleDeleteDrink(id){
+    const updatedDrinks = drinks.filter(drink => drink.id !== id);
+    setDrinks(updatedDrinks)
+  }
+
   return (
     <div className="App">
       <Header />
       {/* <Search /> */}
       <NewDrink onAddDrink={handleAddDrink}/>
-      <DrinkList drinks={drinks}/>
+      <DrinkList 
+        drinks={drinks}
+        onDrinkDelete={handleDeleteDrink}  
+      />
     </div>
   );
 }

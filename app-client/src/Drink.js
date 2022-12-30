@@ -1,6 +1,13 @@
-export default function Drink({drink}){
+export default function Drink({drink, onDrinkDelete}){
   const {name, glass, instructions_en, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, measure1, measure2, measure3, measure4, measure5} = drink
   
+  function handleDeleteClick(id){
+    fetch(`http://localhost:9292/messages/${id}`, {
+      method: "DELETE",
+    });
+    onDrinkDelete(id);
+  }
+
   return(
     <div className="Card">
       <h2>{name}</h2>
@@ -17,7 +24,6 @@ export default function Drink({drink}){
       <a className="App-link" href="#" >
         Edit drink
       </a>
-
       {/* <form >
           <label className="label">Name 
           <input className="form-input"
@@ -38,6 +44,14 @@ export default function Drink({drink}){
           />
           </label>
     </form> */}
+      <span> | </span>
+      {/* <a className="App-link" href="#" onClick={handleDeleteClick}>
+        Delete drink
+      </a> */}
+      <button onClick={handleDeleteClick}>
+        Delete drink
+      </button>
+
     </div>
   )
 } 
