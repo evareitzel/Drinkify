@@ -3,7 +3,7 @@ import Drink from "./Drink";
 export default function DrinkList({drinks}){
   console.log(drinks)
   return(
-    <div> {/* className="DrinkList" */}
+    <div > {/* className="Drink-list" */}
       <h2>Drinks</h2>
       {/* <ul> */}
         {drinks.map(drink => (

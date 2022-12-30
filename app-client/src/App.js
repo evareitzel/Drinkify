@@ -14,15 +14,19 @@ function App() {
 
   useEffect(() => {
     fetch("http://localhost:9292/drinks")
-    .then(r => r.json()) // (r)
-    .then(drinks => setDrinks(drinks)); // (drinks)
+    .then(r => r.json())
+    .then(drinks => setDrinks(drinks));
   }, []);
+
+  function handleAddDrink(newDrink) {
+    setDrinks([...drinks, newDrink]);
+  }
 
   return (
     <div className="App">
       <Header />
       {/* <Search /> */}
-      <NewDrink />
+      <NewDrink onAddDrink={handleAddDrink}/>
       <DrinkList drinks={drinks}/>
     </div>
   );

@@ -18,7 +18,7 @@ export default function Drink({drink}){
         Edit drink
       </a>
 
-      <form >
+      {/* <form >
           <label className="label">Name 
           <input className="form-input"
             // onChange={e => setName(e.target.value)} 
@@ -37,7 +37,7 @@ export default function Drink({drink}){
             // className="form-input"
           />
           </label>
-    </form>
+    </form> */}
     </div>
   )
 } 
