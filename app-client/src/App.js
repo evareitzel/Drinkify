@@ -18,6 +18,7 @@ function App() {
 
   function handleAddDrink(newDrink) {
     setDrinks([...drinks, newDrink]);
+    console.log(drinks)
   }
 
   function handleDeleteDrink(id){

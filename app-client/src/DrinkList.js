@@ -1,11 +1,10 @@
+import React from "react";
 import Drink from "./Drink";
 
 export default function DrinkList({drinks, onDrinkDelete,}){
-  console.log(drinks)
   return(
-    <div > {/* className="Drink-list" */}
+    <div >
       <h2>Drinks</h2>
-      {/* <ul> */}
         {drinks.map(drink => (
           <Drink 
             key={drink.id} 
@@ -13,7 +12,6 @@ export default function DrinkList({drinks, onDrinkDelete,}){
             onDrinkDelete={onDrinkDelete}
           />
         ))}
-      {/* </ul> */}
     </div>
   )
 }

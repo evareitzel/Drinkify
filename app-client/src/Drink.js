@@ -2,9 +2,8 @@ export default function Drink({drink, onDrinkDelete}){
   const {id, name, glass, instructions_en, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, measure1, measure2, measure3, measure4, measure5} = drink
   
   function handleDeleteClick(){ // id
-    JSON.stringify(id)
-
-    fetch(`http://localhost:9292/messages/${id}`, {
+    // JSON.stringify(id)
+    fetch(`http://localhost:9292/drinks/#{id}`, {
       method: "DELETE",
     });
     onDrinkDelete(id);
