@@ -9,7 +9,7 @@ export default function DrinkList({drinks, onDrinkDelete,}){
         {drinks.map(drink => (
           <Drink 
             key={drink.id} 
-            drink = {drink} 
+            drink={drink} 
             onDrinkDelete={onDrinkDelete}
           />
         ))}
