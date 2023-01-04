@@ -39,24 +39,34 @@
   border: none;
   border-radius: 50px;
   color: white;
-  padding: 15px 32px;
+  padding: 16px 32px;
   font-size: 18px;
   letter-spacing: 1px;
   margin-top: 20px;
   width: 50%;
 }
 
+.Ghost-button {
+  /* border: 1px solid white;/* #021aee; */
+  border: none;
+  background-color: #4DD0E1;
+  border-radius: 50px;
+  /* color: white; */
+  margin: 20px 0px;
+  padding: 8px 24px;
+}
+
 .Card {
   border: 1px solid white;/* #021aee; */
   border-radius: 16px;
-  padding: 20px;
-  margin: 20px;
+  padding: 40px;
+  margin: 40px;
   text-align: left;
 }
 
-.Drink-list {
+/* .Drink-list {
   margin: none;
-}
+} */
 
 .Form {
   text-align: left;

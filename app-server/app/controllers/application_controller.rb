@@ -7,13 +7,9 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
     
   # Add your routes here
-  # get "/" do
-  #   { message: "Welcome to Drinkify! The sharing space for mixologists 🍹" }.to_json
-  # end
-
   post '/drinks' do
     drink = Drink.create(name: params[:name], instructions_en: params[:instructions_en])
-    drink.to_json # (include: { user: {only: [:user]} })
+    drink.to_json
   end
 
   get '/drinks' do
@@ -25,7 +21,10 @@ class ApplicationController < Sinatra::Base
 
   patch '/drinks/:id' do # are double quotes needed?
     drink = Drink.find(params[:id])
-    drink.update(instructions_en: params[:instructions_en])
+    drink.update(
+      name: params[:name],
+      instructions_en: params[:instructions_en]
+    )
     drink.to_json # (include: { user: ... })
   end
 

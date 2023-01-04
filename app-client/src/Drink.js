@@ -1,9 +1,12 @@
-export default function Drink({drink, onDrinkDelete}){
+// import React from "react"
+import EditDrink from './EditDrink.js'
+
+export default function Drink({drink, onDrinkDelete, onUpdateDrink}){
   const {id, name, glass, instructions_en, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, measure1, measure2, measure3, measure4, measure5} = drink
   
   function handleDeleteClick(){ // id
     // JSON.stringify(id)
-    fetch(`http://localhost:9292/drinks/#{id}`, {
+    fetch(`http://localhost:9292/drinks/${id}`, {
       method: "DELETE",
     });
     onDrinkDelete(id);
@@ -25,6 +28,7 @@ export default function Drink({drink, onDrinkDelete}){
       <a className="App-link" href="#" >
         Edit drink
       </a>
+      <EditDrink drink={drink} onUpdateDrink={onUpdateDrink} />
       {/* <form >
           <label className="label">Name 
           <input className="form-input"

@@ -26,6 +26,17 @@ function App() {
     setDrinks(updatedDrinks)
   }
 
+  function handleUpdateDrink(updatedDrink){
+    const updatedDrinks = drinks.map(drink => {
+      if(drink.id === updatedDrink.id){
+        return updatedDrink
+      }else{
+        return drink
+      }
+    })
+    setDrinks(updatedDrinks)
+  }
+  
   return (
     <div className="App">
       <Header />
@@ -33,7 +44,8 @@ function App() {
       <NewDrink onAddDrink={handleAddDrink}/>
       <DrinkList 
         drinks={drinks}
-        onDrinkDelete={handleDeleteDrink}  
+        onDrinkDelete={handleDeleteDrink} 
+        onUpdateDrink={handleUpdateDrink} 
       />
     </div>
   );
