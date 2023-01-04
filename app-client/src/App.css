@@ -4,7 +4,11 @@
   text-align: center;
   background-color: #212121;
   color: white;
+}
 
+.Wrapper {
+  text-align: center;
+  width: 500px;
 }
 
 .App-header {

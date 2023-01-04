@@ -13,22 +13,20 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/drinks' do
-    drinks = Drink.all # .order
-    drinks.to_json # (include: { user: ... })
+    drinks = Drink.all
+    drinks.to_json
   end
-  # data = GetRequester.new
-  # ap data.parse_json
 
-  patch '/drinks/:id' do # are double quotes needed?
+  patch '/drinks/:id' do
     drink = Drink.find(params[:id])
     drink.update(
       name: params[:name],
       instructions_en: params[:instructions_en]
     )
-    drink.to_json # (include: { user: ... })
+    drink.to_json
   end
 
-  delete "/drinks/:id" do # ""
+  delete "/drinks/:id" do
     drink = Drink.find(params[:id])
     drink.destroy
     drink.to_json
@@ -73,7 +71,6 @@ class ApplicationController < Sinatra::Base
           obj["strMeasure5"], 
           obj["strInstructions"]
         ]
-        # "name" => 
       
       end
     end
@@ -84,16 +81,3 @@ class ApplicationController < Sinatra::Base
   ap data.parse_json
 
 end
-
-  # get resp body
-  # parse json
-  
-  # get '/drinks/:name' do
-  #   drink = Drink.find_by(params[:name]) # check
-  #   drink.to_json
-  # end
-
-  # get "/" do
-  #   { message: "<h1>Welcome to our Drinks Recipe app!</h1>"}.to_json
-  #   # { drinks: "https://www.thecocktaildb.com/api/jso;n/v1/1/search.php?f=a"  }.to_json
-  # end

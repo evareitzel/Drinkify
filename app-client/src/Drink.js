@@ -1,15 +1,14 @@
 // import React from "react"
-import EditDrink from './EditDrink.js'
+import EditDrink from './EditDrink'
 
-export default function Drink({drink, onDrinkDelete, onUpdateDrink}){
+export default function Drink({drink, onUpdateDrink, onDeleteDrink}){
   const {id, name, glass, instructions_en, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, measure1, measure2, measure3, measure4, measure5} = drink
   
-  function handleDeleteClick(){ // id
-    // JSON.stringify(id)
+  function handleDeleteClick(){
     fetch(`http://localhost:9292/drinks/${id}`, {
       method: "DELETE",
     });
-    onDrinkDelete(id);
+    onDeleteDrink(id)
   }
 
   return(
