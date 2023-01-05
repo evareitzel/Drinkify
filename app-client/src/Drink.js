@@ -14,16 +14,16 @@ export default function Drink({drink, username, onUpdateDrink, onDeleteDrink}){
   return(
     <div className="Card">
       <h2>{name}</h2>
+      <p>By {username}</p>
+      {/* <form>
+      
 
-      <form>
-      <p>Author: {username}</p>
-
-        {/* <label>
+        <label>
           Author:
           <input type="select">{username}</input> 
-        </label> */}
+        </label>
 
-      </form>
+      </form> */}
       
       <p>{glass}</p>
       <h3>Ingredients</h3>

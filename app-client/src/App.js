@@ -16,8 +16,8 @@ function App() {
     .then(r => r.json())
     .then(users => setUsers(users));
   }, []);
+  // console.log(users)
 
-  console.log(users)
   // display only users 
     // click user to show user's drinkList. (or similar)
 
@@ -26,10 +26,10 @@ function App() {
     .then(r => r.json())
     .then(drinks => setDrinks(drinks));
   }, []);
+  // console.log(drinks)
 
   function handleAddDrink(newDrink) {
     setDrinks([...drinks, newDrink]);
-    console.log(drinks)
   }
 
   function handleUpdateDrink(updatedDrink){

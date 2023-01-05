@@ -18,6 +18,9 @@ puts "🌱 Seeding drinks..."
   #     name
   #   )
 
+#   Freebie.create(item_name: "lush speakers", value: 22, dev_id: Dev.first.id, company_id: Company.first.id)
+# Freebie.create(item_name: "hoodie", value: 18, dev_id: Dev.last.id, company_id: Company.last.id)
+
   Drink.create([
     {
       name: "A1",
@@ -33,7 +36,8 @@ puts "🌱 Seeding drinks..."
       measure2: "1 Shot",
       measure3: "1/4 Shot",
       measure4: "1/8 Shot",
-      measure5: nil
+      measure5: nil,
+      user_id: User.first.id
     },
     {
       name: "ABC",
@@ -49,7 +53,8 @@ puts "🌱 Seeding drinks..."
       measure2: "1/3",
       measure3: "1/3",
       measure4: nil,
-      measure5: nil
+      measure5: nil,
+      user_id: User.first.id
     },
     {
       name: "Ace",
@@ -66,6 +71,7 @@ puts "🌱 Seeding drinks..."
       measure3: "1/2 shot",
       measure4: "1/2 shot",
       measure5: "1/2 Fresh",
+      user_id: User.second.id
     },
     {    
       name: "ACID",
@@ -82,6 +88,7 @@ puts "🌱 Seeding drinks..."
       measure3: nil,
       measure4: nil,
       measure5: nil,
+      user_id: User.second.id
     }  
   ])
 

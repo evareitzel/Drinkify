@@ -5,7 +5,6 @@ import NewDrink from "./NewDrink";
 
 export default function User({user, drinks, onAddDrink, onUpdateDrink, onDeleteDrink}){
   const {name} = user
-  console.log(drinks)
   return(
     <div>
       {/* <h3>{name}</h3> */}
