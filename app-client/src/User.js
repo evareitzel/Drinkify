@@ -8,9 +8,10 @@ export default function User({user, drinks, onAddDrink, onUpdateDrink, onDeleteD
   console.log(drinks)
   return(
     <div>
-      <h2>{name}</h2>
+      {/* <h3>{name}</h3> */}
       <DrinkList 
         drinks={drinks}
+        username={name}
         // currentUser={testUser}
         onAddDrink={onAddDrink}
         onUpdateDrink={onUpdateDrink} 

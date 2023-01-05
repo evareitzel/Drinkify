@@ -283,3 +283,27 @@ end
       </form>
     )
   }
+
+#### Edit Drink link
+<a className="App-link" href="#" >
+Edit drink
+</a>
+
+#### Delete Drink button (pre link)
+<button onClick={handleDeleteClick}>
+  Delete drink
+</button>
+
+#### from App.js
+// import Search from "./Search"
+
+// const [search, setSearch] = useState("")
+
+🥃
+
+#### From seeds.rb
+User.create(name: "Brian Flanagan")
+User.create(name: "Liliana Lovell")  
+
+
+

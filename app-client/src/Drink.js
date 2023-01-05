@@ -1,7 +1,7 @@
 // import React from "react"
 import EditDrink from './EditDrink'
 
-export default function Drink({drink, onUpdateDrink, onDeleteDrink}){
+export default function Drink({drink, username, onUpdateDrink, onDeleteDrink}){
   const {id, name, glass, instructions_en, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, measure1, measure2, measure3, measure4, measure5} = drink
   
   function handleDeleteClick(){
@@ -14,19 +14,29 @@ export default function Drink({drink, onUpdateDrink, onDeleteDrink}){
   return(
     <div className="Card">
       <h2>{name}</h2>
-      <p>🥃 {glass}</p>
+
+      <form>
+      <p>Author: {username}</p>
+
+        {/* <label>
+          Author:
+          <input type="select">{username}</input> 
+        </label> */}
+
+      </form>
+      
+      <p>{glass}</p>
       <h3>Ingredients</h3>
       <ul>
         <li>{measure1} {ingredient1}</li>
         <li>{measure2} {ingredient2}</li>
         <li>{measure3} {ingredient3}</li>
-        {/* <li>{measure4} {ingredient4}</li>
-        <li>{measure5} {ingredient5}</li> */}
+        <li>{measure4} {ingredient4}</li>
+        <li>{measure5} {ingredient5}</li>
       </ul>
+      <h3>Instructions</h3>
       <p>{instructions_en}</p>
-      <a className="App-link" href="#" >
-        Edit drink
-      </a>
+
       <EditDrink drink={drink} onUpdateDrink={onUpdateDrink} />
       {/* <form >
           <label className="label">Name 
@@ -48,13 +58,13 @@ export default function Drink({drink, onUpdateDrink, onDeleteDrink}){
           />
           </label>
     </form> */}
-      <span> | </span>
       {/* <a className="App-link" href="#" onClick={handleDeleteClick}>
         Delete drink
       </a> */}
-      <button onClick={handleDeleteClick}>
-        Delete drink
-      </button>
+
+      <a className="App-link"  onClick={handleDeleteClick} >
+        Delete
+      </a>
 
     </div>
   )

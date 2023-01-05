@@ -23,13 +23,18 @@ export default function EditDrink({ drink, onUpdateDrink }){
 
   return(
     <form onSubmit={handleFormSubmit} >
-      <input 
-        className="Form-input" 
-        type="text"
-        name="name" // "name" or "drinkName"?
-        value={drinkName} // drinkName or name ?
-        onChange={e => setDrinkName(e.target.value)}      
-      />
+      <hr />
+      <h4>Edit drink</h4>
+      <label>Name
+        <input 
+          className="Form-input" 
+          type="text"
+          name="name" // "name" or "drinkName"?
+          value={drinkName} // drinkName or name ?
+          onChange={e => setDrinkName(e.target.value)}      
+        />
+
+      </label>
       <input type="submit" value="Save" className="Ghost-button" />
     </form>
   )

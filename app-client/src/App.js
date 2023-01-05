@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
 import Header from "./Header"
-// import Search from "./Search"
 import User from "./User"
 import './App.css'
 
@@ -11,7 +10,6 @@ import './App.css'
 function App() {
   const [users, setUsers] = useState([]);
   const [drinks, setDrinks] = useState([]);
-  // const [search, setSearch] = useState("")
 
   useEffect(() => {
     fetch("http://localhost:9292/users")
