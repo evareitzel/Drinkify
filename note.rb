@@ -149,7 +149,7 @@ end
 # // learn more: https://github.com/testing-library/jest-dom
 # import '@testing-library/jest-dom';
 
-🥂🍻 🍸
+🥂🍻 🍸 🥃 🍹
 
 ################################################
 # from application_controller: # before refactor 1/4/23
@@ -299,11 +299,43 @@ Edit drink
 
 // const [search, setSearch] = useState("")
 
-🥃
-
 #### From seeds.rb
 User.create(name: "Brian Flanagan")
 User.create(name: "Liliana Lovell")  
 
+#### User.rb
+// Nest under App component, over Drink.js
+import DrinkList from "./DrinkList";
+import NewDrink from "./NewDrink";
 
 
+export default function User({user, drinks, onAddDrink, onUpdateDrink, onDeleteDrink}){
+  const {name} = user
+  return(
+    <div>
+      {/* <h3>{name}</h3> */}
+      <DrinkList 
+        drinks={drinks}
+        username={name}
+        // currentUser={testUser}
+        onAddDrink={onAddDrink}
+        onUpdateDrink={onUpdateDrink} 
+        onDeleteDrink={onDeleteDrink} 
+      />
+      <NewDrink onAddDrink={onAddDrink} />
+    </div>
+  )
+}
+
+## from App.js
+// import User from "./User"
+
+{users.map(user => (
+  <User
+    user={user}
+    drinks={drinks} // displayedDrinks
+    onAddDrink={handleAddDrink}        
+    onUpdateDrink={handleUpdateDrink} 
+    onDeleteDrink={handleDeleteDrink} 
+  />
+))}

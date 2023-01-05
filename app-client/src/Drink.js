@@ -1,8 +1,8 @@
 // import React from "react"
 import EditDrink from './EditDrink'
 
-export default function Drink({drink, username, onUpdateDrink, onDeleteDrink}){
-  const {id, name, glass, instructions_en, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, measure1, measure2, measure3, measure4, measure5} = drink
+export default function Drink({drink, users, onUpdateDrink, onDeleteDrink}){
+  const {id, name, glass, instructions_en, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, measure1, measure2, measure3, measure4, measure5, user_id} = drink
   
   function handleDeleteClick(){
     fetch(`http://localhost:9292/drinks/${id}`, {
@@ -11,10 +11,17 @@ export default function Drink({drink, username, onUpdateDrink, onDeleteDrink}){
     onDeleteDrink(id)
   }
 
+  function show_author(user_id){
+    const found = users.find(user =>
+      user.id === user_id)
+    return found.name
+  }
+
   return(
     <div className="Card">
       <h2>{name}</h2>
-      <p>By {username}</p>
+      <p>From {show_author(user_id)}</p>
+
       {/* <form>
       
 
@@ -25,7 +32,7 @@ export default function Drink({drink, username, onUpdateDrink, onDeleteDrink}){
 
       </form> */}
       
-      <p>{glass}</p>
+      <p>🍹 {glass}</p>
       <h3>Ingredients</h3>
       <ul>
         <li>{measure1} {ingredient1}</li>
@@ -65,7 +72,7 @@ export default function Drink({drink, username, onUpdateDrink, onDeleteDrink}){
       <a className="App-link"  onClick={handleDeleteClick} >
         Delete
       </a>
-
+      {/* add popup window confirming that drink was destroyed! */}
     </div>
   )
 } 

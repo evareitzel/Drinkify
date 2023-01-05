@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 
 import Header from "./Header"
-import User from "./User"
+import DrinkList from "./DrinkList";
+import NewDrink from "./NewDrink";
+
 import './App.css'
 
 // const currentUser = { username: "Asa" }
@@ -18,8 +20,7 @@ function App() {
   }, []);
   // console.log(users)
 
-  // display only users 
-    // click user to show user's drinkList. (or similar)
+    // <Filter.js> filter - show user's drinkList. (or similar)
 
   useEffect(() => {
     fetch("http://localhost:9292/drinks")
@@ -60,16 +61,17 @@ function App() {
       <div className="Wrapper">
       <Header />
         {/* <Search /> */}
-        {users.map(user => (
-          <User
-            user={user}
-            drinks={drinks} // displayedDrinks
-            onAddDrink={handleAddDrink}        
-            onUpdateDrink={handleUpdateDrink} 
-            onDeleteDrink={handleDeleteDrink} 
-          />
-        ))}
+      <DrinkList 
+        drinks={drinks}
+        users={users}
+        // username={name}  // const {name} = user
+        // currentUser={testUser}
+        onAddDrink={handleAddDrink}
+        onUpdateDrink={handleUpdateDrink} 
+        onDeleteDrink={handleDeleteDrink} 
+      />
 
+        <NewDrink onAddDrink={handleAddDrink} />
       </div>      
     </div>
   );
