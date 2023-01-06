@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function EditDrink({ drink, onUpdateDrink }){
-  const { name, id } = drink // , instructions_en
+  const { name, id } = drink //, instructions_en
   const [drinkName, setDrinkName] = useState(name)
   // const [instructions, setInstructions] = useState(instructions_en)
 
@@ -29,12 +29,12 @@ export default function EditDrink({ drink, onUpdateDrink }){
         <input 
           className="Form-input" 
           type="text"
-          name="name" // "name" or "drinkName"?
-          value={drinkName} // drinkName or name ?
+          name="name"
+          value={drinkName}
           onChange={e => setDrinkName(e.target.value)}      
         />
-
       </label>
+
       <input type="submit" value="Save" className="Ghost-button" />
     </form>
   )

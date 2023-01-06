@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header"
 import DrinkList from "./DrinkList";
 import NewDrink from "./NewDrink";
+import NewMixologist from "./NewMixologist";
+
 
 import './App.css'
 
@@ -18,7 +20,7 @@ function App() {
     .then(r => r.json())
     .then(users => setUsers(users));
   }, []);
-  // console.log(users)
+  console.log(users)
 
     // <Filter.js> filter - show user's drinkList. (or similar)
 
@@ -29,8 +31,12 @@ function App() {
   }, []);
   // console.log(drinks)
 
+  function handleAddMixologist(newMixologist){
+    setUsers([...users, newMixologist])
+  }
+
   function handleAddDrink(newDrink) {
-    setDrinks([...drinks, newDrink]);
+    setDrinks([...drinks, newDrink])
   }
 
   function handleUpdateDrink(updatedDrink){
@@ -55,6 +61,10 @@ function App() {
   // )
 
   // authors?
+
+  // const displayedDrinks = drinks.filter(drink => ( 
+  // drink.user_id === search
+  // ))  
   
   return (
     <div className="App">
@@ -71,7 +81,9 @@ function App() {
         onDeleteDrink={handleDeleteDrink} 
       />
 
-        <NewDrink onAddDrink={handleAddDrink} />
+        <NewDrink onAddDrink={handleAddDrink} users={users} /> 
+        <NewMixologist onAddMixologist={handleAddMixologist} /> 
+        
       </div>      
     </div>
   );

@@ -72,7 +72,8 @@ class ApplicationController < Sinatra::Base
           obj["strInstructions"]
         ]
       
-      end
+        end
+
     end
   
   end
@@ -81,3 +82,8 @@ class ApplicationController < Sinatra::Base
   ap data.parse_json
 
 end
+
+# drinks.each do |drink|
+#   # here you would save each data object/each drink to the database as a new drink directly
+#   Drink.create! 
+# end

@@ -12,7 +12,6 @@ export default function DrinkList({drinks, users, onUpdateDrink, onDeleteDrink})
             onUpdateDrink={onUpdateDrink}
             onDeleteDrink={onDeleteDrink}
             users={users}
-            // username={username}
           />
         ))}
     </div>

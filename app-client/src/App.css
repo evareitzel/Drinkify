@@ -89,6 +89,10 @@
   color: white;
 }
 
+.Form-wrapper {
+  padding-top: 50px;
+}
+
 /* .Label {
   font-size: 16px; 
   padding: 0 0 0 20px;

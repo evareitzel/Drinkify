@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 
-export default function NewDrink({ onAddDrink }){ // currentUser
+export default function NewDrink({ onAddDrink, users }){ // currentUser
   const [name, setName] = useState("");
   const [instructions_en, setInstructions_en] = useState("");
+  // const [users, setUsers] = useState("")
 
   function handleSubmit(e){
     e.preventDefault();
@@ -26,8 +27,30 @@ export default function NewDrink({ onAddDrink }){ // currentUser
       })
   }
 
+  // function options(users){
+  //   users.map(user => user.name)
+  // }
+
+  const options1 = [
+    { 
+      value: 1,
+      label: "Leanne Graham"
+    },
+    {
+      value:  2,
+      label: "Ervin Howell"
+    }
+  ]
+
+  console.log(users)
+  const options = users.map(user => {
+    return <option>{user.name}</option> 
+  })
+
+  console.log(options)
+
   return(
-    <div>
+    <div className="Form-wrapper">
       {/* <a className="App-link" href="#" >
         Add new drink
       </a> */}
@@ -53,6 +76,15 @@ export default function NewDrink({ onAddDrink }){ // currentUser
             onChange={e => setInstructions_en(e.target.value)}
           />
         </label>
+
+        <label>Created by
+        {/* dropdown */}
+        {/* user.all - search React*/}
+          <select>
+            {options}
+          </select>
+        </label>
+
         <div className="Button-wrapper">
           <button type="submit" className="Button">Add drink</button>
         </div>

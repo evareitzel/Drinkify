@@ -44,16 +44,19 @@ puts "🌱 Seeding drinks..."
       glass: "Shot glass",
       instructions_en: "Layered in a shot glass.",
       instructions_sp: nil,
-      ingredient1: "Amaretto",
-      ingredient2: "Baileys irish cream",
-      ingredient3: "Cognac",
-      ingredient4: nil,
-      ingredient5: nil, 
+      ingredients: {
+        ingredient1: "Amaretto",
+        ingredient2: "Baileys irish cream",
+        ingredient3: "Cognac",
+      },
+
+      # ingredient4: nil,
+      # ingredient5: nil, 
       measure1: "1/3",
       measure2: "1/3",
       measure3: "1/3",
-      measure4: nil,
-      measure5: nil,
+      # measure4: nil,
+      # measure5: nil,
       user_id: User.first.id
     },
     {

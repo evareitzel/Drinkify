@@ -20,7 +20,7 @@ export default function Drink({drink, users, onUpdateDrink, onDeleteDrink}){
   return(
     <div className="Card">
       <h2>{name}</h2>
-      <p>From {show_author(user_id)}</p>
+      <p>Recipe by {show_author(user_id)}</p>
 
       {/* <form>
       
