@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 export default function NewDrink({ onAddDrink, mixologists }){ // users
   const [name, setName] = useState("");
-  const [instructions_en, setInstructions_en] = useState("");
+  const [instructions, setInstructions] = useState("");
 
   function handleSubmit(e){
     e.preventDefault();
@@ -14,14 +14,14 @@ export default function NewDrink({ onAddDrink, mixologists }){ // users
       },
       body: JSON.stringify({
         name: name,
-        instructions_en: instructions_en,
+        instructions: instructions
       }),
     })
       .then(r => r.json())
       .then(newDrink => {
         onAddDrink(newDrink);
         setName("");
-        setInstructions_en("")
+        setInstructions("")
       })
   }
 
@@ -50,10 +50,10 @@ export default function NewDrink({ onAddDrink, mixologists }){ // users
           <input
             className="Form-input"
             type="text"
-            name="instructions_en"
+            name="instructions"
             // autoComplete="off"
-            value={instructions_en}
-            onChange={e => setInstructions_en(e.target.value)}
+            value={instructions}
+            onChange={e => setInstructions(e.target.value)}
           />
         </label>
 
