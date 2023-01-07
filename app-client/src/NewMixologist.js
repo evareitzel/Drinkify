@@ -6,7 +6,7 @@ export default function NewMixologist({ onAddMixologist }){
   function handleSubmit(e){
     e.preventDefault();
 
-    fetch("http://localhost:9292/users", {
+    fetch("http://localhost:9292/mixologists", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

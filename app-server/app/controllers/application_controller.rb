@@ -36,8 +36,13 @@ class ApplicationController < Sinatra::Base
     drink.to_json
   end
 
+  # get '/mixologists' do
+  #   mixologists = Mixologist.all
+  #   mixologists.to_json
+  # end
+
   get '/mixologists' do
-    mixologists = Mixologist.all
+    mixologists = Mixologist.all.includes(:drinks)
     mixologists.to_json
   end
 
