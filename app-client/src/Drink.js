@@ -2,7 +2,7 @@
 import EditDrink from './EditDrink'
 
 export default function Drink({drink, mixologists, onUpdateDrink, onDeleteDrink}){
-  const {id, name, glass, instructions_en, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, measure1, measure2, measure3, measure4, measure5, mixologist_id} = drink
+  const {id, name, glass, instructions_en, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, measure1, measure2, measure3, measure4, measure5, image, mixologist_id} = drink
   
   function handleDeleteClick(){
     fetch(`http://localhost:9292/drinks/${id}`, {
@@ -19,6 +19,7 @@ export default function Drink({drink, mixologists, onUpdateDrink, onDeleteDrink}
 
   return(
     <div className="Card">
+      <img src={image} width="350" alt={name} />
       <h2>{name}</h2>
       {/* <p>Recipe by {show_author(user_id)}</p> */}
 

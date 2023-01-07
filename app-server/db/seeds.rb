@@ -48,6 +48,49 @@ Drink.create([
     image: "https://www.thecocktaildb.com/images/media/drink/6ck9yi1589574317.jpg",
     mixologist_id: Mixologist.last.id,
   },
+  {
+    name: "Old Fashioned", 
+    instructions: "In an old-fashioned glass, muddle the bitters and water into the sugar cube, using the back of a teaspoon. Almost fill the glass with ice cubes and add the bourbon. Garnish with the orange slice and the cherry. Serve with a swizzle stick.", 
+    ingredients: "Bitters, Water, Sugar, Bourbon, Orange, Maraschino cherry", 
+    image: "https://www.thecocktaildb.com/images/media/drink/w8cxqv1582485254.jpg", 
+    mixologist_id: Mixologist.first.id,
+},
+{
+  name: "Mojito",
+  instructions: "Muddle mint leaves with sugar and lime juice. Add a splash of soda water and fill the glass with cracked ice. Pour the rum and top with soda water. Garnish and serve with straw.", 
+  ingredients: "Light rum, Lime, Sugar, Mint, Soda water",
+  image: "https://www.thecocktaildb.com/images/media/drink/metwgh1606770327.jpg",
+  mixologist_id: Mixologist.last.id,
+},
+{
+  name: "Gin Tonic",
+  instructions: "Fill a highball glass with ice, pour the gin, top with tonic water and squeeze a lemon wedge and garnish with a lemon wedge.", 
+  ingredients: "Gin, Tonic Water, Lemon Peel, Ice", 
+  image: "https://www.thecocktaildb.com/images/media/drink/qcgz0t1643821443.jpg",
+  mixologist_id: Mixologist.first.id,
+},
+{
+  name: "Margarita",
+  instructions: "Rub the rim of the glass with the lime slice to make the salt stick to it. Take care to moisten only the outer rim and sprinkle the salt on it. The salt should present to the lips of the imbiber and never mix into the cocktail. Shake the other ingredients with ice, then carefully pour into the glass.", 
+  ingredients: "Tequila, Triple sec, Lime juice, Salt", 
+  image: "https://www.thecocktaildb.com/images/media/drink/5noda61589575158.jpg",
+  mixologist_id: Mixologist.last.id,
+},
+{
+  name: "Negroni",
+  instructions: "Stir into glass over ice, garnish and serve.", 
+  ingredients: "Gin, Campari, Sweet Vermouth", 
+  image: "https://www.thecocktaildb.com/images/media/drink/qgdu971561574065.jpg",
+  mixologist_id: Mixologist.first.id,
+}, 
+{
+  name: "Pisco Sour",
+  instructions: "Vigorously shake and strain contents in a cocktail shaker with ice cubes, then pour into glass and garnish with bitters.", 
+  ingredients: "Pisco, Lemon juice, Sugar, Ice, Egg White", 
+  image: "https://www.thecocktaildb.com/images/media/drink/tsssur1439907622.jpg",
+  mixologist_id: Mixologist.last.id,
+},
+
 ])
 
 puts "✅ Done seeding!"
