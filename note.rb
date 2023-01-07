@@ -339,3 +339,59 @@ export default function User({user, drinks, onAddDrink, onUpdateDrink, onDeleteD
     onDeleteDrink={handleDeleteDrink} 
   />
 ))}
+
+# From NewDrink.js
+// username: currentUser.username,
+
+// function options(users){
+  //   users.map(user => user.name)
+  // }
+
+  // const options1 = [
+  //   { 
+  //     value: 1,
+  //     label: "Leanne Graham"
+  //   },
+  //   {
+  //     value:  2,
+  //     label: "Ervin Howell"
+  //   }
+  // ]
+
+  <label>Created by
+  {/* dropdown */}
+  {/* user.all - search React*/}
+    <select>
+      {options}
+    </select>
+  </label>
+
+  ## User.js (edited down, then deleted)
+  // Nest under App component, over Drink.js
+
+
+export default function User({user, drinks, onAddDrink, onUpdateDrink, onDeleteDrink}){
+  return(
+    <div>
+      {/* <h3>{name}</h3> */}
+    </div>
+  )
+}
+
+## From App.js
+// <Filter.js> filter - show user's drinkList. (or similar)
+
+// const displayedDrinks = drinks.filter(drink => 
+  //   // message.body.toLowerCase().includes(search.toLowerCase())
+  //   drink.owner.toLowerCase().includes(currentUser.tolowercase())  
+  // )
+
+  // authors?
+
+  // const displayedDrinks = drinks.filter(drink => ( 
+  // drink.user_id === search
+  // ))  
+
+  {/* <Search /> */}
+  // username={name}  // const {name} = user
+  // currentUser={testUser}

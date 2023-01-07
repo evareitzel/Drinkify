@@ -32,7 +32,7 @@ class ApplicationController < Sinatra::Base
     drink.to_json
   end
 
-  get '/users' do
+  get '/users' do # mixologists
     users = User.all
     users.to_json
   end

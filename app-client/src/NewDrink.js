@@ -1,9 +1,8 @@
 import React, { useState } from "react"
 
-export default function NewDrink({ onAddDrink, users }){ // currentUser
+export default function NewDrink({ onAddDrink, users }){ //// mixologists
   const [name, setName] = useState("");
   const [instructions_en, setInstructions_en] = useState("");
-  // const [users, setUsers] = useState("")
 
   function handleSubmit(e){
     e.preventDefault();
@@ -14,7 +13,6 @@ export default function NewDrink({ onAddDrink, users }){ // currentUser
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // username: currentUser.username,
         name: name,
         instructions_en: instructions_en,
       }),
@@ -27,24 +25,9 @@ export default function NewDrink({ onAddDrink, users }){ // currentUser
       })
   }
 
-  // function options(users){
-  //   users.map(user => user.name)
-  // }
-
-  const options1 = [
-    { 
-      value: 1,
-      label: "Leanne Graham"
-    },
-    {
-      value:  2,
-      label: "Ervin Howell"
-    }
-  ]
-
-  console.log(users)
-  const options = users.map(user => {
-    return <option>{user.name}</option> 
+  console.log(users) //// mixologists
+  const options = users.map(user => { //// mixologists // mixologist
+    return <option>{user.name}</option> // mixologist
   })
 
   console.log(options)
@@ -78,8 +61,6 @@ export default function NewDrink({ onAddDrink, users }){ // currentUser
         </label>
 
         <label>Created by
-        {/* dropdown */}
-        {/* user.all - search React*/}
           <select>
             {options}
           </select>

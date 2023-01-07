@@ -11,16 +11,16 @@ export default function Drink({drink, users, onUpdateDrink, onDeleteDrink}){
     onDeleteDrink(id)
   }
 
-  function show_author(user_id){
-    const found = users.find(user =>
-      user.id === user_id)
-    return found.name
-  }
+  // function show_author(user_id){
+    // const found = users.find(user =>
+    //   user.id === user_id)
+  //   return found.name
+  // }
 
   return(
     <div className="Card">
       <h2>{name}</h2>
-      <p>Recipe by {show_author(user_id)}</p>
+      {/* <p>Recipe by {show_author(user_id)}</p> */}
 
       {/* <form>
       
