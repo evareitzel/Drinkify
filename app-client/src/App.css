@@ -1,5 +1,4 @@
 .App {
-
   /* background-color: #282c34; */
   text-align: center;
   background-color: #212121;
@@ -91,6 +90,16 @@
 
 .Form-wrapper {
   padding-top: 50px;
+}
+
+.Separator {
+  background: #fff;
+  margin: 40px 0 20px 0;
+}
+
+.Image {
+  border-radius: 8px;
+  width: 100%;
 }
 
 /* .Label {

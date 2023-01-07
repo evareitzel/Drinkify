@@ -1,8 +1,7 @@
-// import React from "react";
 import Drink from "./Drink";
 
 export default function DrinkList({drinks, mixologists, onUpdateDrink, onDeleteDrink}){
-
+  
   return(
     <div >
         {drinks.map(drink => (

@@ -2,8 +2,8 @@
 import EditDrink from './EditDrink'
 
 export default function Drink({drink, mixologists, onUpdateDrink, onDeleteDrink}){
-  const {id, name, glass, instructions_en, ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, measure1, measure2, measure3, measure4, measure5, image, mixologist_id} = drink
-  
+  const {id, name, instructions, ingredients, image, mixologist_id} = drink
+
   function handleDeleteClick(){
     fetch(`http://localhost:9292/drinks/${id}`, {
       method: "DELETE",
@@ -19,7 +19,7 @@ export default function Drink({drink, mixologists, onUpdateDrink, onDeleteDrink}
 
   return(
     <div className="Card">
-      <img src={image} width="350" alt={name} />
+      <img src={image} width="350" alt={name} className="Image" />
       <h2>{name}</h2>
       {/* <p>Recipe by {show_author(user_id)}</p> */}
 
@@ -33,17 +33,13 @@ export default function Drink({drink, mixologists, onUpdateDrink, onDeleteDrink}
 
       </form> */}
       
-      <p>🍹 {glass}</p>
-      <h3>Ingredients</h3>
-      <ul>
-        <li>{measure1} {ingredient1}</li>
-        <li>{measure2} {ingredient2}</li>
-        <li>{measure3} {ingredient3}</li>
-        <li>{measure4} {ingredient4}</li>
-        <li>{measure5} {ingredient5}</li>
-      </ul>
+      {/* <h3>Ingredients</h3> */}
+      {/* <ul> */}
+        {/* <li>{ingredients}</li> */}
+        <p>🍹 {ingredients}</p>
+      {/* </ul> */}
       <h3>Instructions</h3>
-      <p>{instructions_en}</p>
+      <p>{instructions}</p>
 
       <EditDrink drink={drink} onUpdateDrink={onUpdateDrink} />
       {/* <form >

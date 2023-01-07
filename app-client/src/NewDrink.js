@@ -25,12 +25,9 @@ export default function NewDrink({ onAddDrink, mixologists }){ // users
       })
   }
 
-  console.log(mixologists) // users
-  const options =  mixologists.map(mixologist => { // users, user 
-    return <option>{mixologist.name}</option> // user
+  const options =  mixologists.map(mixologist => { 
+    return <option>{mixologist.name}</option>
   })
-
-  console.log(options)
 
   return(
     <div className="Form-wrapper">

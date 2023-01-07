@@ -13,6 +13,7 @@ export default function NewMixologist({ onAddMixologist }){
       },
       body: JSON.stringify({
         name: name,
+        // key: name,
       }),
     })
       .then(r => r.json())
