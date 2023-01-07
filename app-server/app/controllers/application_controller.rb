@@ -32,13 +32,13 @@ class ApplicationController < Sinatra::Base
     drink.to_json
   end
 
-  get '/users' do # mixologists
-    users = User.all
-    users.to_json
+  get '/mixologists' do
+    mixologists = Mixologist.all
+    mixologists.to_json
   end
 
-  post '/users' do
-    user = User.create(name: params[:name])
+  post '/mixologists' do
+    mixologist = Mixologist.create(name: params[:name])
     user.to_json
   end
 
@@ -57,19 +57,14 @@ class ApplicationController < Sinatra::Base
       drinks = data["drinks"].collect do |obj|
   
         [
-          obj["strDrink"], 
-          obj["strGlass"], 
-          obj["strIngredient1"], 
-          obj["strIngredient2"], 
-          obj["strIngredient3"], 
-          obj["strIngredient4"], 
-          obj["strIngredient5"], 
-          obj["strMeasure1"], 
-          obj["strMeasure2"], 
-          obj["strMeasure3"], 
-          obj["strMeasure4"], 
-          obj["strMeasure5"], 
-          obj["strInstructions"]
+          obj["strDrink"],
+          obj["strInstructions"],
+          obj["strDrinkThumb"],
+          # {
+          #   i1: obj["strIngredient1"],
+          #   # i2: obj["strIngredient2"],
+          #   # i3: obj["strIngredient3"],
+          # }
         ]
       
         end
@@ -79,8 +74,21 @@ class ApplicationController < Sinatra::Base
   end
   
   data = GetRequester.new
-  ap data.parse_json
+  # ap data.parse_json
+  parsed = data.parse_json
+  # ap parsed
+  # seed = []
+  # parsed.map(drink => 
+  #   seed << drink
+  # )
+  # ap seed
+  seed2 = parsed.each do |drink|
+    drink
+    # add "belongs_to(0..num_mixologists.to_i.random"
+  end
 
+  ap seed2
+  # how to run the seed?
 end
 
 # drinks.each do |drink|

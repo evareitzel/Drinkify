@@ -1,142 +1,128 @@
-puts "🌱 Seeding users..."
+puts "🌱 Seeding mixologists..."
 
-  # Seed your database here
-
-  User.create(name: "Brian Flanagan")
-  User.create(name: "Liliana Lovell")  
-
-  # Make 2 mixologists
-  # 2.times do
-  #   User.create(name: Faker::Name.name)
-  # end 
+  Mixologist.create(name: "Brian Flanagan")
+  Mixologist.create(name: "Liliana Lovell")  
 
 puts "🌱 Seeding drinks..."
 
-  # # Make 6 drinks
-  # 6.times do
-  #   drink = Drink.create(
-  #     name
-  #   )
+Drink.create(
+  name: "A1",
+  instructions: "Pour all ingredients into a cocktail shaker, mix and serve over ice into a chilled glass.",  
+  ingredients: "Gin, Grand Marnier, Lemon Juice",
+  mixologist_id: Mixologist.first.id,  
+)
+
+puts "✅ Done seeding!"
+# ingredients: ""
+  # image: "https://www.thecocktaildb.com/images/media/drink/2x8thr1504816928.jpg",
+
+
+
+# Drink.create([
+  #   {
+  #     name: "A1",
+  #     glass: "Cocktail glass",
+  #     instructions_en: "Pour all ingredients into a cocktail shaker, mix and serve over ice into a chilled glass.",
+  #     instructions_sp: nil,
+  #     ingredient1: "Gin",
+  #     ingredient2: "Grand Marnier",
+  #     ingredient3: "Lemon Juice",
+  #     ingredient4: "Grenadine",
+  #     ingredient5: nil, 
+  #     measure1: "1 3/4 shot",
+  #     measure2: "1 Shot",
+  #     measure3: "1/4 Shot",
+  #     measure4: "1/8 Shot",
+  #     measure5: nil,
+  #     mixologist_id: Mixologist.first.id
+  #   },
+  #   {
+  #     name: "ABC",
+  #     glass: "Shot glass",
+  #     instructions_en: "Layered in a shot glass.",
+  #     instructions_sp: nil,
+  #     ingredients: {
+  #       ingredient1: "Amaretto",
+  #       ingredient2: "Baileys irish cream",
+  #       ingredient3: "Cognac",
+  #     },
+
+  #     # ingredient4: nil,
+  #     # ingredient5: nil, 
+  #     measure1: "1/3",
+  #     measure2: "1/3",
+  #     measure3: "1/3",
+  #     # measure4: nil,
+  #     # measure5: nil,
+  #     mixologist_id: Mixologist.first.id
+  #   },
+  #   {
+  #     name: "Ace",
+  #     glass: "Martini Glass",
+  #     instructions_en: "Shake all the ingredients in a cocktail shaker and ice then strain in a cold glass.",
+  #     instructions_sp: nil,
+  #     ingredient1: "Gin",
+  #     ingredient2: "Grenadine",
+  #     ingredient3: "Heavy cream",
+  #     ingredient4: "Milk",
+  #     ingredient5: "Egg White",
+  #     measure1: "2 shots",
+  #     measure2: "1/2 shot",
+  #     measure3: "1/2 shot",
+  #     measure4: "1/2 shot",
+  #     measure5: "1/2 Fresh",
+  #     mixologist_id: Mixologist.second.id
+  #   },
+  #   {    
+  #     name: "ACID",
+  #     glass: "Shot glass",
+  #     instructions_en: "Poor in the 151 first followed by the 101 served with a Coke or Dr Pepper chaser.",
+  #     instructions_sp: nil,
+  #     ingredient1: "151 proof rum",
+  #     ingredient2: "Wild Turkey",
+  #     ingredient3: nil,
+  #     ingredient4: nil,
+  #     ingredient5: nil,
+  #     measure1: "1 oz Bacardi",
+  #     measure2: "1 oz",
+  #     measure3: nil,
+  #     measure4: nil,
+  #     measure5: nil,
+  #     mixologist_id: Mixologist.second.id
+  #   }  
+  # ])
+
+
+
+
+# t.string :name
+# t.string :instructions
+# t.string :ingredient1
+# t.string :ingredient2
+# t.string :ingredient3
+# t.string :image
+
+# t.integer :mixologist_id
+
+
+
+
+# obj["strDrink"],
+# obj["strInstructions"],
+# obj["strDrinkThumb"],
+# # {
+# #   i1: obj["strIngredient1"],
+# #   # i2: obj["strIngredient2"],
+# #   # i3: obj["strIngredient3"],
+# # }
 
 #   Freebie.create(item_name: "lush speakers", value: 22, dev_id: Dev.first.id, company_id: Company.first.id)
 # Freebie.create(item_name: "hoodie", value: 18, dev_id: Dev.last.id, company_id: Company.last.id)
 
-  Drink.create([
-    {
-      name: "A1",
-      glass: "Cocktail glass",
-      instructions_en: "Pour all ingredients into a cocktail shaker, mix and serve over ice into a chilled glass.",
-      instructions_sp: nil,
-      ingredient1: "Gin",
-      ingredient2: "Grand Marnier",
-      ingredient3: "Lemon Juice",
-      ingredient4: "Grenadine",
-      ingredient5: nil, 
-      measure1: "1 3/4 shot",
-      measure2: "1 Shot",
-      measure3: "1/4 Shot",
-      measure4: "1/8 Shot",
-      measure5: nil,
-      user_id: User.first.id
-    },
-    {
-      name: "ABC",
-      glass: "Shot glass",
-      instructions_en: "Layered in a shot glass.",
-      instructions_sp: nil,
-      ingredients: {
-        ingredient1: "Amaretto",
-        ingredient2: "Baileys irish cream",
-        ingredient3: "Cognac",
-      },
 
-      # ingredient4: nil,
-      # ingredient5: nil, 
-      measure1: "1/3",
-      measure2: "1/3",
-      measure3: "1/3",
-      # measure4: nil,
-      # measure5: nil,
-      user_id: User.first.id
-    },
-    {
-      name: "Ace",
-      glass: "Martini Glass",
-      instructions_en: "Shake all the ingredients in a cocktail shaker and ice then strain in a cold glass.",
-      instructions_sp: nil,
-      ingredient1: "Gin",
-      ingredient2: "Grenadine",
-      ingredient3: "Heavy cream",
-      ingredient4: "Milk",
-      ingredient5: "Egg White",
-      measure1: "2 shots",
-      measure2: "1/2 shot",
-      measure3: "1/2 shot",
-      measure4: "1/2 shot",
-      measure5: "1/2 Fresh",
-      user_id: User.second.id
-    },
-    {    
-      name: "ACID",
-      glass: "Shot glass",
-      instructions_en: "Poor in the 151 first followed by the 101 served with a Coke or Dr Pepper chaser.",
-      instructions_sp: nil,
-      ingredient1: "151 proof rum",
-      ingredient2: "Wild Turkey",
-      ingredient3: nil,
-      ingredient4: nil,
-      ingredient5: nil,
-      measure1: "1 oz Bacardi",
-      measure2: "1 oz",
-      measure3: nil,
-      measure4: nil,
-      measure5: nil,
-      user_id: User.second.id
-    }  
-  ])
 
-  # Drink.create(
-  #   name: "A1",
-  #   glass: "Cocktail glass",
-  #   instructions_en: "Pour all ingredients into a cocktail shaker, mix and serve over ice into a chilled glass.",
-  #   instructions_sp: nil,
-  #   ingredient1: "Gin",
-  #   ingredient2: "Grand Marnier",
-  #   ingredient3: "Lemon Juice",
-  #   measure1: "1 3/4 shot"
-  # )
-  # Drink.create(
-  #   name: "ABC",
-  #   glass: "Shot glass",
-  #   instructions_en: "Layered in a shot glass.",
-  #   instructions_sp: nil,
-  #   ingredient1: "Amaretto",
-  #   ingredient2: "Baileys irish cream",
-  #   ingredient3: "Cognac",
-  #   measure1: "1/3"
-  # )
-  # Drink.create(
-  #   name: "Ace",
-  #   glass: "Martini Glass",
-  #   instructions_en: "Shake all the ingredients in a cocktail shaker and ice then strain in a cold glass.",
-  #   instructions_sp: nil,
-  #   ingredient1: "Gin",
-  #   ingredient2: "Grenadine",
-  #   ingredient3: "Heavy cream",
-  #   measure1: "2 shots"
-  # )
-  # Drink.create(
-  #   name: "ACID",
-  #   glass: "Shot glass",
-  #   instructions_en: "Poor in the 151 first followed by the 101 served with a Coke or Dr Pepper chaser.",
-  #   instructions_sp: nil,
-  #   ingredient1: "151 proof rum",
-  #   ingredient2: "Wild Turkey",
-  #   ingredient3: nil,
-  #   measure1: "1 oz Bacardi"
-  # )
 
-puts "✅ Done seeding!"
+##############################################################
 
   # [ 4] [
   #     [0] "Adam",
@@ -286,3 +272,134 @@ puts "✅ Done seeding!"
 #     description: spell_hash["desc"][0] # spell_hash["desc"] returns an array, so we need to access the first index to get just a string of the description
 #   )
 # end
+
+
+#########################################################
+
+  # # Seed your database here
+
+    # Make 2 mixologists
+  # 2.times do
+  #   User.create(name: Faker::Name.name)
+  # end 
+
+    # # Make 6 drinks
+  # 6.times do
+  #   drink = Drink.create(
+  #     name
+  #   )
+
+  # Drink.create([
+  #   {
+  #     name: "A1",
+  #     glass: "Cocktail glass",
+  #     instructions_en: "Pour all ingredients into a cocktail shaker, mix and serve over ice into a chilled glass.",
+  #     instructions_sp: nil,
+  #     ingredient1: "Gin",
+  #     ingredient2: "Grand Marnier",
+  #     ingredient3: "Lemon Juice",
+  #     ingredient4: "Grenadine",
+  #     ingredient5: nil, 
+  #     measure1: "1 3/4 shot",
+  #     measure2: "1 Shot",
+  #     measure3: "1/4 Shot",
+  #     measure4: "1/8 Shot",
+  #     measure5: nil,
+  #     mixologist_id: Mixologist.first.id
+  #   },
+  #   {
+  #     name: "ABC",
+  #     glass: "Shot glass",
+  #     instructions_en: "Layered in a shot glass.",
+  #     instructions_sp: nil,
+  #     ingredients: {
+  #       ingredient1: "Amaretto",
+  #       ingredient2: "Baileys irish cream",
+  #       ingredient3: "Cognac",
+  #     },
+
+  #     # ingredient4: nil,
+  #     # ingredient5: nil, 
+  #     measure1: "1/3",
+  #     measure2: "1/3",
+  #     measure3: "1/3",
+  #     # measure4: nil,
+  #     # measure5: nil,
+  #     mixologist_id: Mixologist.first.id
+  #   },
+  #   {
+  #     name: "Ace",
+  #     glass: "Martini Glass",
+  #     instructions_en: "Shake all the ingredients in a cocktail shaker and ice then strain in a cold glass.",
+  #     instructions_sp: nil,
+  #     ingredient1: "Gin",
+  #     ingredient2: "Grenadine",
+  #     ingredient3: "Heavy cream",
+  #     ingredient4: "Milk",
+  #     ingredient5: "Egg White",
+  #     measure1: "2 shots",
+  #     measure2: "1/2 shot",
+  #     measure3: "1/2 shot",
+  #     measure4: "1/2 shot",
+  #     measure5: "1/2 Fresh",
+  #     mixologist_id: Mixologist.second.id
+  #   },
+  #   {    
+  #     name: "ACID",
+  #     glass: "Shot glass",
+  #     instructions_en: "Poor in the 151 first followed by the 101 served with a Coke or Dr Pepper chaser.",
+  #     instructions_sp: nil,
+  #     ingredient1: "151 proof rum",
+  #     ingredient2: "Wild Turkey",
+  #     ingredient3: nil,
+  #     ingredient4: nil,
+  #     ingredient5: nil,
+  #     measure1: "1 oz Bacardi",
+  #     measure2: "1 oz",
+  #     measure3: nil,
+  #     measure4: nil,
+  #     measure5: nil,
+  #     mixologist_id: Mixologist.second.id
+  #   }  
+  # ])
+
+  # Drink.create(
+  #   name: "A1",
+  #   glass: "Cocktail glass",
+  #   instructions_en: "Pour all ingredients into a cocktail shaker, mix and serve over ice into a chilled glass.",
+  #   instructions_sp: nil,
+  #   ingredient1: "Gin",
+  #   ingredient2: "Grand Marnier",
+  #   ingredient3: "Lemon Juice",
+  #   measure1: "1 3/4 shot"
+  # )
+  # Drink.create(
+  #   name: "ABC",
+  #   glass: "Shot glass",
+  #   instructions_en: "Layered in a shot glass.",
+  #   instructions_sp: nil,
+  #   ingredient1: "Amaretto",
+  #   ingredient2: "Baileys irish cream",
+  #   ingredient3: "Cognac",
+  #   measure1: "1/3"
+  # )
+  # Drink.create(
+  #   name: "Ace",
+  #   glass: "Martini Glass",
+  #   instructions_en: "Shake all the ingredients in a cocktail shaker and ice then strain in a cold glass.",
+  #   instructions_sp: nil,
+  #   ingredient1: "Gin",
+  #   ingredient2: "Grenadine",
+  #   ingredient3: "Heavy cream",
+  #   measure1: "2 shots"
+  # )
+  # Drink.create(
+  #   name: "ACID",
+  #   glass: "Shot glass",
+  #   instructions_en: "Poor in the 151 first followed by the 101 served with a Coke or Dr Pepper chaser.",
+  #   instructions_sp: nil,
+  #   ingredient1: "151 proof rum",
+  #   ingredient2: "Wild Turkey",
+  #   ingredient3: nil,
+  #   measure1: "1 oz Bacardi"
+  # )

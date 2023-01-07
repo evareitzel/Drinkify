@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-export default function NewDrink({ onAddDrink, users }){ //// mixologists
+export default function NewDrink({ onAddDrink, mixologists }){ // users
   const [name, setName] = useState("");
   const [instructions_en, setInstructions_en] = useState("");
 
@@ -25,9 +25,9 @@ export default function NewDrink({ onAddDrink, users }){ //// mixologists
       })
   }
 
-  console.log(users) //// mixologists
-  const options = users.map(user => { //// mixologists // mixologist
-    return <option>{user.name}</option> // mixologist
+  console.log(mixologists) // users
+  const options =  mixologists.map(mixologist => { // users, user 
+    return <option>{mixologist.name}</option> // user
   })
 
   console.log(options)

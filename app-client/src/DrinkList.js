@@ -1,7 +1,7 @@
 // import React from "react";
 import Drink from "./Drink";
 
-export default function DrinkList({drinks, users, onUpdateDrink, onDeleteDrink}){
+export default function DrinkList({drinks, mixologists, onUpdateDrink, onDeleteDrink}){
 
   return(
     <div >
@@ -11,7 +11,7 @@ export default function DrinkList({drinks, users, onUpdateDrink, onDeleteDrink})
             drink={drink} 
             onUpdateDrink={onUpdateDrink}
             onDeleteDrink={onDeleteDrink}
-            users={users}
+            mixologists={mixologists}
           />
         ))}
     </div>

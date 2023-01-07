@@ -1,3 +1,3 @@
-class Drink < ActiveRecord::Base # Sinatra::Base
-  belongs_to :user
+class Drink < ActiveRecord::Base
+  belongs_to :mixologist
 end
