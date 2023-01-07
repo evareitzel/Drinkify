@@ -4,7 +4,7 @@ export default function NewMixologist({ onAddMixologist }){
   const [name, setName] = useState("")
 
   function handleSubmit(e){
-    e.preventDefault();
+    e.preventDefault()
 
     fetch("http://localhost:9292/mixologists", {
       method: "POST",
@@ -18,8 +18,8 @@ export default function NewMixologist({ onAddMixologist }){
     })
       .then(r => r.json())
       .then(newMixologist => {
-        onAddMixologist(newMixologist);
-        setName("");
+        onAddMixologist(newMixologist)
+        setName("")
       })
   }
 

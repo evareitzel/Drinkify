@@ -1,4 +1,3 @@
-// import React from "react"
 import EditDrink from './EditDrink'
 
 export default function Drink({drink, mixologists, onUpdateDrink, onDeleteDrink}){
@@ -24,20 +23,13 @@ export default function Drink({drink, mixologists, onUpdateDrink, onDeleteDrink}
       {/* <p>Recipe by {show_author(user_id)}</p> */}
 
       {/* <form>
-      
-
         <label>
           Author:
           <input type="select">{username}</input> 
         </label>
-
       </form> */}
       
-      {/* <h3>Ingredients</h3> */}
-      {/* <ul> */}
-        {/* <li>{ingredients}</li> */}
-        <p>🍹 {ingredients}</p>
-      {/* </ul> */}
+      <p>🍹 {ingredients}</p>
       <h3>Instructions</h3>
       <p>{instructions}</p>
 

@@ -10,23 +10,23 @@ function App() {
   const [mixologists, setMixologists] = useState([])
   const [drinks, setDrinks] = useState([])
 
-  //// START Mixologists w Drinks data
-  const [mixologistsWithDrinks, setMixologistsWithDrinks] = useState([])
+  // //// START Mixologists w Drinks data
+  // const [mixologistsWithDrinks, setMixologistsWithDrinks] = useState([])
 
   
-  useEffect(() => {
-    fetch("http://localhost:9292/mixologists")    
-    .then(r => r.json())
-    .then(mixologistsWithDrinks => setMixologistsWithDrinks(mixologistsWithDrinks))
-  }, [])
-  // console.log(`mixologistsWithDrinks: ${mixologistsWithDrinks}`)
-  // debugger
-  // console.log(mixologistsWithDrinks)
-  console.log(mixologistsWithDrinks[0])
-  // [drinks]
+  // useEffect(() => {
+  //   fetch("http://localhost:9292/mixologists")    
+  //   .then(r => r.json())
+  //   .then(mixologistsWithDrinks => setMixologistsWithDrinks(mixologistsWithDrinks))
+  // }, [])
+  // // console.log(`mixologistsWithDrinks: ${mixologistsWithDrinks}`)
+  // // debugger
+  // // console.log(mixologistsWithDrinks)
+  // console.log(mixologistsWithDrinks[0])
+  // // [drinks]
 
 
-  //// END Mixologists w Drinks data
+  // //// END Mixologists w Drinks data
 
   useEffect(() => {
     fetch("http://localhost:9292/mixologists")    
@@ -40,12 +40,13 @@ function App() {
     .then(drinks => setDrinks(drinks))
   }, [])
   // console.log(drinks)
-  console.log(mixologists)
   // console.log(mixologists[0])
 
   function handleAddMixologist(newMixologist){
     setMixologists([...mixologists, newMixologist])
   }
+  console.log(mixologists)
+
 
   function handleAddDrink(newDrink) {
     setDrinks([...drinks, newDrink])

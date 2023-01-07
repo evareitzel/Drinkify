@@ -26,7 +26,7 @@ export default function NewDrink({ onAddDrink, mixologists }){ // users
   }
 
   const options =  mixologists.map(mixologist => { 
-    return <option>{mixologist.name}</option>
+    return <option key={mixologist.id}>{mixologist.name}</option>
   })
 
   return(

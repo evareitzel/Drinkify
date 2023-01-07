@@ -395,3 +395,65 @@ export default function User({user, drinks, onAddDrink, onUpdateDrink, onDeleteD
   {/* <Search /> */}
   // username={name}  // const {name} = user
   // currentUser={testUser}
+
+
+########################################################
+# FROM application_controller.rb
+
+
+# drinks.each do |drink|
+#   # here you would save each data object/each drink to the database as a new drink directly
+#   Drink.create! 
+# end
+
+class GetRequester
+  URL = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'
+
+  def get_response_body
+    uri = URI.parse(URL)
+    response = Net::HTTP.get_response(uri)
+    response.body
+  end
+
+  def parse_json
+    data = JSON.parse(self.get_response_body)
+
+    drinks = data["drinks"].collect do |obj|
+
+      [
+        obj["strDrink"],
+        obj["strInstructions"],
+        obj["strDrinkThumb"],
+        # {
+        #   i1: obj["strIngredient1"],
+        #   # i2: obj["strIngredient2"],
+        #   # i3: obj["strIngredient3"],
+        # }
+      ]
+    
+      end
+
+  end
+
+end
+
+data = GetRequester.new
+# ap data.parse_json
+parsed = data.parse_json
+# ap parsed
+# seed = []
+# parsed.map(drink => 
+#   seed << drink
+# )
+# ap seed
+seed2 = parsed.each do |drink|
+  drink
+  # add "belongs_to(0..num_mixologists.to_i.random"
+end
+
+ap seed2
+# how to run the seed?
+
+
+
+
