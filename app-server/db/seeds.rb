@@ -5,119 +5,61 @@ puts "🌱 Seeding mixologists..."
 
 puts "🌱 Seeding drinks..."
 
-Drink.create(
-  name: "A1",
-  instructions: "Pour all ingredients into a cocktail shaker, mix and serve over ice into a chilled glass.",  
-  ingredients: "Gin, Grand Marnier, Lemon Juice",
-  mixologist_id: Mixologist.first.id,  
-)
+Drink.create([
+  {
+    name: "A1",
+    instructions: "Pour all ingredients into a cocktail shaker, mix and serve over ice into a chilled glass.", 
+    ingredients: "Gin, Grand Marnier, Lemon Juice", 
+    image: "https://www.thecocktaildb.com/images/media/drink/2x8thr1504816928.jpg",
+    mixologist_id: Mixologist.first.id,
+  },
+  {
+    name: "ABC",
+    instructions: "Layered in a shot glass.", 
+    ingredients: "Amaretto, Baileys irish cream, Cognac", 
+    image: "https://www.thecocktaildb.com/images/media/drink/tqpvqp1472668328.jpg", 
+    mixologist_id: Mixologist.second.id,
+  },
+  {
+    name: "Ace",
+    instructions: "Shake all the ingredients in a cocktail shaker and ice then strain in a cold glass.", 
+    ingredients: "Gin, Grenadine, Heavy cream, Milk, Egg White", 
+    image: "https://www.thecocktaildb.com/images/media/drink/l3cd7f1504818306.jpg",
+    mixologist_id: Mixologist.first.id,
+  },
+  {
+    name: "ACID",
+    instructions: "Pour in the 151 first followed by the 101 served with a Coke or Dr Pepper chaser.", 
+    ingredients: "151 proof rum, Wild Turkey", 
+    image: "https://www.thecocktaildb.com/images/media/drink/xuxpxt1479209317.jpg",
+    mixologist_id: Mixologist.second.id,
+  },
+  {
+    name: "Adam",
+    instructions: "n a shaker half-filled with ice cubes, combine all of the ingredients. Shake well. Strain into a cocktail glass.", 
+    ingredients: "Dark rum, Lemon juice, Grenadine", 
+    image: "https://www.thecocktaildb.com/images/media/drink/v0at4i1582478473.jpg",
+    mixologist_id: Mixologist.first.id,
+  },
+  {
+    name: "Dry Martini",
+    instructions: "Straight: Pour all ingredients into mixing glass with ice cubes. Stir well. Strain in chilled martini cocktail glass. Squeeze oil from lemon peel onto the drink, or garnish with olive.", 
+    ingredients: "Gin, Dry Vermouth, Olive", 
+    image: "https://www.thecocktaildb.com/images/media/drink/6ck9yi1589574317.jpg",
+    mixologist_id: Mixologist.last.id,
+  },
+])
 
 puts "✅ Done seeding!"
-# ingredients: ""
-  # image: "https://www.thecocktaildb.com/images/media/drink/2x8thr1504816928.jpg",
 
 
-
-# Drink.create([
-  #   {
-  #     name: "A1",
-  #     glass: "Cocktail glass",
-  #     instructions_en: "Pour all ingredients into a cocktail shaker, mix and serve over ice into a chilled glass.",
-  #     instructions_sp: nil,
-  #     ingredient1: "Gin",
-  #     ingredient2: "Grand Marnier",
-  #     ingredient3: "Lemon Juice",
-  #     ingredient4: "Grenadine",
-  #     ingredient5: nil, 
-  #     measure1: "1 3/4 shot",
-  #     measure2: "1 Shot",
-  #     measure3: "1/4 Shot",
-  #     measure4: "1/8 Shot",
-  #     measure5: nil,
-  #     mixologist_id: Mixologist.first.id
-  #   },
-  #   {
-  #     name: "ABC",
-  #     glass: "Shot glass",
-  #     instructions_en: "Layered in a shot glass.",
-  #     instructions_sp: nil,
-  #     ingredients: {
-  #       ingredient1: "Amaretto",
-  #       ingredient2: "Baileys irish cream",
-  #       ingredient3: "Cognac",
-  #     },
-
-  #     # ingredient4: nil,
-  #     # ingredient5: nil, 
-  #     measure1: "1/3",
-  #     measure2: "1/3",
-  #     measure3: "1/3",
-  #     # measure4: nil,
-  #     # measure5: nil,
-  #     mixologist_id: Mixologist.first.id
-  #   },
-  #   {
-  #     name: "Ace",
-  #     glass: "Martini Glass",
-  #     instructions_en: "Shake all the ingredients in a cocktail shaker and ice then strain in a cold glass.",
-  #     instructions_sp: nil,
-  #     ingredient1: "Gin",
-  #     ingredient2: "Grenadine",
-  #     ingredient3: "Heavy cream",
-  #     ingredient4: "Milk",
-  #     ingredient5: "Egg White",
-  #     measure1: "2 shots",
-  #     measure2: "1/2 shot",
-  #     measure3: "1/2 shot",
-  #     measure4: "1/2 shot",
-  #     measure5: "1/2 Fresh",
-  #     mixologist_id: Mixologist.second.id
-  #   },
-  #   {    
-  #     name: "ACID",
-  #     glass: "Shot glass",
-  #     instructions_en: "Poor in the 151 first followed by the 101 served with a Coke or Dr Pepper chaser.",
-  #     instructions_sp: nil,
-  #     ingredient1: "151 proof rum",
-  #     ingredient2: "Wild Turkey",
-  #     ingredient3: nil,
-  #     ingredient4: nil,
-  #     ingredient5: nil,
-  #     measure1: "1 oz Bacardi",
-  #     measure2: "1 oz",
-  #     measure3: nil,
-  #     measure4: nil,
-  #     measure5: nil,
-  #     mixologist_id: Mixologist.second.id
-  #   }  
-  # ])
-
-
-
-
-# t.string :name
-# t.string :instructions
-# t.string :ingredient1
-# t.string :ingredient2
-# t.string :ingredient3
-# t.string :image
-
-# t.integer :mixologist_id
-
-
-
-
-# obj["strDrink"],
-# obj["strInstructions"],
-# obj["strDrinkThumb"],
-# # {
-# #   i1: obj["strIngredient1"],
-# #   # i2: obj["strIngredient2"],
-# #   # i3: obj["strIngredient3"],
-# # }
-
-#   Freebie.create(item_name: "lush speakers", value: 22, dev_id: Dev.first.id, company_id: Company.first.id)
-# Freebie.create(item_name: "hoodie", value: 18, dev_id: Dev.last.id, company_id: Company.last.id)
+# {
+#   name: "",
+#   instructions: "", 
+#   ingredients: "", 
+#   image: "",
+#   mixologist_id: Mixologist.first.id,
+# },
 
 
 
