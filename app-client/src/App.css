@@ -8,6 +8,7 @@
 .Wrapper {
   text-align: center;
   width: 500px;
+  padding: 20px 20px 100px 20px;
 }
 
 .App-header {
@@ -94,7 +95,7 @@
 
 .Separator {
   background: #fff;
-  margin: 40px 0 20px 0;
+  margin: 40px 0;
 }
 
 .Image {

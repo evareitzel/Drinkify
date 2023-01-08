@@ -11,6 +11,10 @@ class ApplicationController < Sinatra::Base
     drink.to_json
   end
 
+  # ## get has_many/belongs_to data
+  # get '/mixologist/drinks' do
+  # end
+
   get '/drinks' do
     drinks = Drink.all
     drinks.to_json

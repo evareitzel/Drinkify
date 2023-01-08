@@ -25,6 +25,7 @@ export default function NewMixologist({ onAddMixologist }){
 
   return(
     <div className="Form-wrapper">
+      
       <h2>Add mixologist</h2>
       <form className="Form" onSubmit={handleSubmit}>
         <label>Name
