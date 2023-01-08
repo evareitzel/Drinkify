@@ -1,8 +1,7 @@
-class MixologistController < ApplicationController
+class MixologistsController < ApplicationController
   
   def index
     @mixologists = Mixologist.all
-
     render json: @mixologists
   end
 

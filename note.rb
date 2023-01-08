@@ -455,5 +455,15 @@ ap seed2
 # how to run the seed?
 
 
+## From .canvas
+---
+:lessons:
+- :id: 121173
+  :course_id: 3299
+  :canvas_url: https://learning.flatironschool.com/courses/3299/pages/121173
+  :type: page
+
+
+
 
 

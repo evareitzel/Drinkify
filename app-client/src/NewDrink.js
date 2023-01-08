@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-export default function NewDrink({ onAddDrink, mixologists }){ // users
+export default function NewDrink({ onAddDrink, mixologists }){
   const [name, setName] = useState("");
   const [instructions, setInstructions] = useState("");
 

@@ -11,19 +11,19 @@ function App() {
   const [drinks, setDrinks] = useState([])
 
   //// START Mixologists w Drinks data
-  const [mixologistsWithDrinks, setMixologistsWithDrinks] = useState([])
+  // const [mixologistsWithDrinks, setMixologistsWithDrinks] = useState([])
 
   
-  useEffect(() => {
-    fetch("http://localhost:9292/mixologists")    
-    .then(r => r.json())
-    .then(mixologistsWithDrinks => setMixologistsWithDrinks(mixologistsWithDrinks))
-  }, [])
+  // useEffect(() => {
+  //   fetch("http://localhost:9292/mixologists")    
+  //   .then(r => r.json())
+  //   .then(mixologistsWithDrinks => setMixologistsWithDrinks(mixologistsWithDrinks))
+  // }, [])
   // console.log(`mixologistsWithDrinks: ${mixologistsWithDrinks}`)
   // debugger
   // console.log(mixologistsWithDrinks)
-  const m1 = mixologistsWithDrinks[0]
-  console.log(m1)
+  // const m1 = mixologistsWithDrinks[0]
+  // console.log(m1)
   // console.log(m1.drink_objs)
 
   // const m1Drinks = m1[drinks] // .map(drink => drink.name)
