@@ -464,6 +464,11 @@ ap seed2
   :type: page
 
 
+####################### from application_controller.rb
 
+# get '/mixologists' do
+#   mixologists = Mixologist.all.includes(:drinks)
+#   mixologists.to_json
+# end
 
 

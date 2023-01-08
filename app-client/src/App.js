@@ -9,6 +9,7 @@ import "./App.css"
 function App() {
   const [mixologists, setMixologists] = useState([])
   const [drinks, setDrinks] = useState([])
+  const [latestDrinks, setLatestDrinks] = useState([])
 
   //// START Mixologists w Drinks data
   // const [mixologistsWithDrinks, setMixologistsWithDrinks] = useState([])
@@ -55,7 +56,15 @@ function App() {
     .then(drinks => setDrinks(drinks))
   }, [])
   // console.log(drinks)
-  // console.log(mixologists[0])
+  console.log(mixologists[5])
+
+  useEffect(() => {
+    fetch("http://localhost:9292/drinks")
+    .then(r => r.json())
+    .then(latestDrinks => setLatestDrinks(latestDrinks))
+  }, [])
+
+  console.log(latestDrinks)
 
   function handleAddMixologist(newMixologist){
     setMixologists([...mixologists, newMixologist])

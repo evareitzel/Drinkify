@@ -6,9 +6,20 @@ require 'awesome_print'
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  post '/drinks' do
-    drink = Drink.create(name: params[:name], instructions: params[:instructions])
-    drink.to_json
+  get '/mixologists' do
+    mixologists = Mixologist.all
+    mixologists.to_json
+  end
+
+  # get this working
+  # ref: https://github.com/learn-co-students/SENG-LIVE-071921/blob/main/phase-3/09_sinatra_api_crud_and_relationships/README.md
+  get '/mixologists/:id'
+    setMixologists(mixologists.map(m => m.id === mixologist.id ? mixologist : m))
+  end
+
+  post '/mixologists' do
+    mixologist = Mixologist.create(name: params[:name])
+    mixologist.to_json
   end
 
   # ## get has_many/belongs_to data
@@ -18,6 +29,11 @@ class ApplicationController < Sinatra::Base
   get '/drinks' do
     drinks = Drink.all
     drinks.to_json
+  end
+
+  post '/drinks' do
+    drink = Drink.create(name: params[:name], instructions: params[:instructions])
+    drink.to_json
   end
 
   patch '/drinks/:id' do
@@ -34,21 +50,6 @@ class ApplicationController < Sinatra::Base
     drink = Drink.find(params[:id])
     drink.destroy
     drink.to_json
-  end
-
-  get '/mixologists' do
-    mixologists = Mixologist.all
-    mixologists.to_json
-  end
-
-  # get '/mixologists' do
-  #   mixologists = Mixologist.all.includes(:drinks)
-  #   mixologists.to_json
-  # end
-
-  post '/mixologists' do
-    mixologist = Mixologist.create(name: params[:name])
-    mixologist.to_json
   end
 
 end
