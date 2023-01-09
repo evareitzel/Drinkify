@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 
 import Header from "./Header"
+import Mixologist from "./Mixologist"
 import DrinkList from "./DrinkList"
 import NewDrink from "./NewDrink"
 import NewMixologist from "./NewMixologist"
@@ -10,6 +11,25 @@ function App() {
   const [mixologists, setMixologists] = useState([])
   const [drinks, setDrinks] = useState([])
   const [latestDrinks, setLatestDrinks] = useState([])
+
+  //// get mixologist
+  // function mixologistDetail({ mixologistId }) {
+    const [mixologist, setMixologist] = useState(null) // move to User component?
+////////////
+    // useEffect(() => {
+    //   fetch(`http://localhost:9292/mixologists/${mixologistId}`)
+    //   .then(r => r.json())
+    //   .then(mixologist => setMixologist(mixologist))
+    // }, [mixologistId])
+////////////
+
+    // return (
+    //   <div>
+    //     <h2>{mixologist.name}</h2>
+    //   </div>
+    // )
+  // }
+  
 
   //// START Mixologists w Drinks data
   // const [mixologistsWithDrinks, setMixologistsWithDrinks] = useState([])
@@ -95,7 +115,7 @@ function App() {
     <div className="App">
       <div className="Wrapper">
       <Header />
-      {/* <Mixologist/> */}
+      <Mixologist/>
       <DrinkList 
         drinks={drinks}
         mixologists={mixologists}
