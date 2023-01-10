@@ -9,23 +9,17 @@ export default function Mixologist({ mixologistId }){
       .then(mixologist => setMixologist(mixologist))
     }, [mixologistId])
 
-    // console.log(mixologist)
-    // handleClick = (){
-    //   console.log('clicked!')
-    // }
+    function handleMixologistClick(e){
+      console.log(`${mixologist.name} got clicked!`)
+      console.log(mixologist)
+    }
 
     return(
       <div>
-        {/* <a className="App-link" href="#" onClick={this.handleClick()}>
-{mixologist.name}
-</a>         */}
+        <a className="App-link" onClick={handleMixologistClick}>
+          {mixologist.name}
+        </a>         
  
-        <a className="App-link" href="#" >
-{mixologist.name}
-</a>
-
-{/* <button className="Button">{mixologist.name}</button> */}
-
     </div>
   )
 }
