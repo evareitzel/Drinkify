@@ -17,13 +17,6 @@ function App() {
     .then(r => r.json())
     .then(mixologists => setMixologists(mixologists))
   }, [])
-  // console.log(mixologists)
-
-  // HERE ********** - wkg on getting mixologistId fo Mixologist component
-  // console.log(mixologists.map(mixologist => {
-  //     mixologist.id
-  //   })) 
-
 
   useEffect(() => {
     fetch("http://localhost:9292/drinks")
