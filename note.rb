@@ -472,3 +472,61 @@ ap seed2
 # end
 
 
+## Notes from App.js (attempts to get nested data)
+//// START Mixologists w Drinks data
+// const [mixologistsWithDrinks, setMixologistsWithDrinks] = useState([])
+
+
+// useEffect(() => {
+//   fetch("http://localhost:9292/mixologists")    
+//   .then(r => r.json())
+//   .then(mixologistsWithDrinks => setMixologistsWithDrinks(mixologistsWithDrinks))
+// }, [])
+// console.log(`mixologistsWithDrinks: ${mixologistsWithDrinks}`)
+// debugger
+// console.log(mixologistsWithDrinks)
+// const m1 = mixologistsWithDrinks[0]
+// console.log(m1)
+// console.log(m1.drink_objs)
+
+// const m1Drinks = m1[drinks] // .map(drink => drink.name)
+// console.log(m1Drinks)
+//   current_user.favorites.each do |favourite|
+//   = favourite.colors
+// end
+
+// const url = 'http://localhost:9292/mixologists'
+
+//   const getMixologistsIndex = (url) =>{
+//     fetch(url)
+//     .then(response => response.json())
+//     .then(mixologists => mixologists.data.forEach(mixologist => new Mixologist(mixologist).renderMixologist()));
+// }
+
+// console.log(getMixologistsIndex(url))
+//// END Mixologists w Drinks data
+
+#### from App.js
+
+// useEffect(() => {
+  //   fetch("http://localhost:9292/drinks")
+  //   .then(r => r.json())
+  //   .then(latestDrinks => setLatestDrinks(latestDrinks))
+  // }, [])
+
+  ////////
+  // function renderMixologists(mixologists){ // (){
+  // // const mixologistIds = 
+  //   mixologists.map(mixologist => {
+  //     mixologist.id
+  //   })
+  //   console.log(mixologistIds)
+  //   mixologistIds.each(mixologistId => <Mixologist mixologistId={mixologistId} />)  
+  // }
+    // console.log('hi!')
+
+    // renderMixologists(mixologists)
+    // console.log(mixologists)
+
+    ####
+    

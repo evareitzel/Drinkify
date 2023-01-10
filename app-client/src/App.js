@@ -10,86 +10,30 @@ import "./App.css"
 function App() {
   const [mixologists, setMixologists] = useState([])
   const [drinks, setDrinks] = useState([])
-  const [latestDrinks, setLatestDrinks] = useState([])
-
-  //// get mixologist
-  // function mixologistDetail({ mixologistId }) {
-    const [mixologist, setMixologist] = useState(null) // move to User component?
-////////////
-    // useEffect(() => {
-    //   fetch(`http://localhost:9292/mixologists/${mixologistId}`)
-    //   .then(r => r.json())
-    //   .then(mixologist => setMixologist(mixologist))
-    // }, [mixologistId])
-////////////
-
-    // return (
-    //   <div>
-    //     <h2>{mixologist.name}</h2>
-    //   </div>
-    // )
-  // }
-  
-
-  //// START Mixologists w Drinks data
-  // const [mixologistsWithDrinks, setMixologistsWithDrinks] = useState([])
-
-  
-  // useEffect(() => {
-  //   fetch("http://localhost:9292/mixologists")    
-  //   .then(r => r.json())
-  //   .then(mixologistsWithDrinks => setMixologistsWithDrinks(mixologistsWithDrinks))
-  // }, [])
-  // console.log(`mixologistsWithDrinks: ${mixologistsWithDrinks}`)
-  // debugger
-  // console.log(mixologistsWithDrinks)
-  // const m1 = mixologistsWithDrinks[0]
-  // console.log(m1)
-  // console.log(m1.drink_objs)
-
-  // const m1Drinks = m1[drinks] // .map(drink => drink.name)
-  // console.log(m1Drinks)
-//   current_user.favorites.each do |favourite|
-//   = favourite.colors
-// end
-
-  // const url = 'http://localhost:9292/mixologists'
-
-//   const getMixologistsIndex = (url) =>{
-//     fetch(url)
-//     .then(response => response.json())
-//     .then(mixologists => mixologists.data.forEach(mixologist => new Mixologist(mixologist).renderMixologist()));
-// }
-
-// console.log(getMixologistsIndex(url))
-  //// END Mixologists w Drinks data
+  // const [latestDrinks, setLatestDrinks] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:9292/mixologists")    
     .then(r => r.json())
     .then(mixologists => setMixologists(mixologists))
   }, [])
+  // console.log(mixologists)
+
+  // HERE ********** - wkg on getting mixologistId fo Mixologist component
+  // console.log(mixologists.map(mixologist => {
+  //     mixologist.id
+  //   })) 
+
 
   useEffect(() => {
     fetch("http://localhost:9292/drinks")
     .then(r => r.json())
     .then(drinks => setDrinks(drinks))
   }, [])
-  // console.log(drinks)
-  console.log(mixologists[5])
-
-  useEffect(() => {
-    fetch("http://localhost:9292/drinks")
-    .then(r => r.json())
-    .then(latestDrinks => setLatestDrinks(latestDrinks))
-  }, [])
-
-  console.log(latestDrinks)
 
   function handleAddMixologist(newMixologist){
     setMixologists([...mixologists, newMixologist])
   }
-
 
   function handleAddDrink(newDrink) {
     setDrinks([...drinks, newDrink])
@@ -110,12 +54,20 @@ function App() {
     const updatedDrinks = drinks.filter(drink => drink.id !== id)
     setDrinks(updatedDrinks)
   }  
-  
+  {console.log(mixologists)}
+
   return (
     <div className="App">
       <div className="Wrapper">
       <Header />
-      <Mixologist/>
+      <h2>Mixologists</h2>
+      {mixologists.map(mixologist => (
+          <Mixologist 
+            key={mixologist.id}
+            mixologistId={mixologist.id} 
+          />
+      ))}
+        
       <DrinkList 
         drinks={drinks}
         mixologists={mixologists}
