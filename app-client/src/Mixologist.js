@@ -5,6 +5,7 @@ import Drink from "./Drink"
 export default function Mixologist({ mixologistId, onUpdateDrink, onDeleteDrink }){
   const [mixologist, setMixologist] = useState([])
   const [drinks, setDrinks] = useState([])
+  const [cards, setCards] = useState(false)
 
   useEffect(() => {
     fetch(`http://localhost:9292/mixologists/${mixologistId}`)
@@ -13,32 +14,32 @@ export default function Mixologist({ mixologistId, onUpdateDrink, onDeleteDrink 
       setMixologist(mixologist)
       setDrinks(mixologist.drinks)
     })
-    // .then(mixologist => setDrinks(mixologist.drinks))
   }, [mixologistId])
 
-console.log(drinks)
+// console.log(drinks)
 
-  function handleMixologistClick(e){
-    console.log(`${mixologist.name}} got clicked!`)
-  }
+const renderDrinks = drinks.map(drink => {
+  return <Drink 
+    key={drink.id} 
+    drink={drink} 
+    // onUpdateDrink={onUpdateDrink}
+    // onDeleteDrink={onDeleteDrink}
+    mixologist={mixologist}
+  />
+})
   
-  const renderDrinks = 
-    drinks.map(drink => {
-      return <Drink 
-        key={drink.id} 
-        drink={drink} 
-      //   // onUpdateDrink={onUpdateDrink}
-      //   // onDeleteDrink={onDeleteDrink}
-        mixologist={mixologist}
-      />
-    })
+  const showCards = 
+  !cards 
+  ? null
+  : renderDrinks
 
   return(
     <div>
-      <a className="App-link" onClick={handleMixologistClick}>
+      {/* <a className="App-link" onClick={handleMixologistClick}> */}
+      <a className="App-link" onClick={() => setCards(!cards)}>
         {mixologist.name}
       </a>
-      {renderDrinks}
+      {showCards}
     </div>
   )
 }
