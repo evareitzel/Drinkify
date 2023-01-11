@@ -47,6 +47,7 @@ const renderDrinks = drinks.map(drink => {
     <div>
       <a className="App-link" onClick={() => setCards(!cards)}>
         {mixologist.name}
+        {cards ? ' 🡨' : ' 🡪'}
       </a>
       {showCards}
     </div>

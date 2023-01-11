@@ -47,26 +47,6 @@ export default function Drink({drink, mixologist, onUpdateDrink}){
       </a>
       {showEditDrink}
 
-      {/* <form >
-          <label className="label">Name 
-          <input className="form-input"
-            // onChange={e => setName(e.target.value)} 
-            placeholder={name}
-            type="text"
-            value={name}
-            // className="form-input"
-          />
-          </label>
-          <label className="label">Instructions
-          <input className="form-input"
-            // onChange={e => setName(e.target.value)} 
-            placeholder={instructions_en}
-            type="text"
-            value={instructions_en}
-            // className="form-input"
-          />
-          </label>
-    </form> */}
       {/* <a className="App-link" href="#" onClick={handleDeleteClick}>
         Delete drink
       </a> */}
