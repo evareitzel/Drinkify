@@ -1,14 +1,18 @@
-import EditDrink from './EditDrink'
+// import EditDrink from './EditDrink'
 
-export default function Drink({drink, mixologists, onUpdateDrink, onDeleteDrink}){
-  const {id, name, instructions, ingredients, image, mixologist_id} = drink
+export default function Drink({drink, mixologist}){ 
+// ({drink, onUpdateDrink, onDeleteDrink}){ 
 
-  function handleDeleteClick(){
-    fetch(`http://localhost:9292/drinks/${id}`, {
-      method: "DELETE",
-    });
-    onDeleteDrink(id)
-  }
+  const {name, instructions, ingredients} = drink
+
+  // const {id, name, instructions, ingredients, image, mixologist_id} = drink
+
+  // function handleDeleteClick(){
+  //   fetch(`http://localhost:9292/drinks/${id}`, {
+  //     method: "DELETE",
+  //   });
+  //   onDeleteDrink(id)
+  // }
 
   // function show_author(user_id){
     // const found = users.find(user =>
@@ -18,10 +22,8 @@ export default function Drink({drink, mixologists, onUpdateDrink, onDeleteDrink}
 
   return(
     <div className="Card">
-      <img src={image} width="350" alt={name} className="Image" />
+      {/* <img src={image} width="350" alt={name} className="Image" /> */}
       <h2>{name}</h2>
-      {/* <p>Recipe by {show_author(user_id)}</p> */}
-
       {/* <form>
         <label>
           Author:
@@ -29,11 +31,11 @@ export default function Drink({drink, mixologists, onUpdateDrink, onDeleteDrink}
         </label>
       </form> */}
       
-      <p>🍹 {ingredients}</p>
-      <h3>Instructions</h3>
+      <h3>{ingredients}</h3>
       <p>{instructions}</p>
+      <p>🍹 Created by {mixologist.name}</p>
 
-      <EditDrink drink={drink} onUpdateDrink={onUpdateDrink} />
+      {/* <EditDrink drink={drink} onUpdateDrink={onUpdateDrink} /> */}
       {/* <form >
           <label className="label">Name 
           <input className="form-input"
@@ -58,9 +60,9 @@ export default function Drink({drink, mixologists, onUpdateDrink, onDeleteDrink}
         Delete drink
       </a> */}
 
-      <a className="App-link"  onClick={handleDeleteClick} >
+      {/* <a className="App-link"  onClick={handleDeleteClick} >
         Delete
-      </a>
+      </a> */}
       {/* add popup window confirming that drink was destroyed! */}
     </div>
   )

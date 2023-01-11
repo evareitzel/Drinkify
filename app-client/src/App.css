@@ -50,16 +50,6 @@
   width: 50%;
 }
 
-.Ghost-button {
-  /* border: 1px solid white;/* #021aee; */
-  border: none;
-  background-color: #4DD0E1;
-  border-radius: 50px;
-  /* color: white; */
-  margin: 20px 0px;
-  padding: 8px 24px;
-}
-
 .Card {
   border: 1px solid white;/* #021aee; */
   border-radius: 16px;
@@ -71,6 +61,20 @@
 /* .Drink-list {
   margin: none;
 } */
+
+.Dropdown {
+  margin-left: 8px
+}
+
+.Ghost-button {
+  /* border: 1px solid white;/* #021aee; */
+  border: none;
+  background-color: #4DD0E1;
+  border-radius: 50px;
+  /* color: white; */
+  margin: 20px 0px;
+  padding: 8px 24px;
+}
 
 .Form {
   text-align: left;

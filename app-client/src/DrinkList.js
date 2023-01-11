@@ -1,18 +1,23 @@
 import Drink from "./Drink";
 
-export default function DrinkList({drinks, mixologists, onUpdateDrink, onDeleteDrink}){
+export default function DrinkList({drinks, mixologist, onUpdateDrink, onDeleteDrink}){
   
-  return(
-    <div >
-        {drinks.map(drink => (
+
+  const renderDrinks = 
+  console.log(drinks)
+    drinks.map(drink => (
           <Drink 
             key={drink.id} 
             drink={drink} 
             onUpdateDrink={onUpdateDrink}
             onDeleteDrink={onDeleteDrink}
-            mixologists={mixologists}
+            mixologist={mixologist}
           />
-        ))}
+        ))
+
+  return(
+    <div >
+      {renderDrinks}  
     </div>
   )
 }

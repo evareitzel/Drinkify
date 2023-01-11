@@ -294,6 +294,19 @@ Edit drink
   Delete drink
 </button>
 
+#### from NewDrink.js
+const options =  mixologists.map(mixologist => { 
+  return <option key={mixologist.id}>{mixologist.name}</option>
+})
+
+<label>Created by
+<select>
+  {options}
+</select>
+</label>
+
+
+
 #### from App.js
 // import Search from "./Search"
 
@@ -528,5 +541,242 @@ ap seed2
     // renderMixologists(mixologists)
     // console.log(mixologists)
 
-    ####
+####################
+####################
+#################### NewDrink.js code -->
+
+    import React, { useState } from "react"
+
+export default function NewDrink({ onAddDrink, mixologists }){ // , mixologist
+  const [name, setName] = useState("");
+  const [instructions, setInstructions] = useState("");
+
+  // const mixologistId = mixologist.id
+  // console.log(mixologistId)
+
+  function handleSubmit(e){
+    e.preventDefault()
+    window.alert(`${name} added to drinks!`)
+
+console.log(e.target.value)    
+    // {
+    //   name: name,
+    //   instructions: instructions,
+    //   mixologist_id: mixologistId
+    // }
+
+    const drinkData = {
+      name: name,
+      instructions: instructions,
+      mixologist_id: mixologist_id// mixologist.id
+    }
+    console.log(`New drink obj for fetch: ${drinkData}`)
+    console.log(JSON.stringify(drinkData))
+
+    fetch("http://localhost:9292/drinks", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(drinkData),
+    })
+      .then(r => r.json())
+      .then(newDrink => {
+        onAddDrink(newDrink)
+        setName("")
+        setInstructions("")
+      })
+  }
+
+  const options =  mixologists.map(mixologist => { 
+    return <option key={mixologist.id} value={mixologist.id}
+    >{mixologist.name}</option>
+  })
+  
+
+  return(
+    <div className="Form-wrapper">
+      {/* <a className="App-link" href="#" >
+        Add new drink
+      </a> */}
+      <h2>Add new drink</h2>
+      <form className="Form" onSubmit={handleSubmit} >
+        <label>Name
+          <input
+            className="Form-input"
+            type="text"
+            name="name"
+            // autoComplete="off"
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
+        </label>
+        <label>Instructions
+          <input
+            className="Form-input"
+            type="text"
+            name="instructions"
+            // autoComplete="off"
+            value={instructions}
+            onChange={e => setInstructions(e.target.value)}
+          />
+        </label>
+
+        <label>Created by
+  <select>
+    {options}
+  </select>
+  </label>
+
+
+        <div className="Button-wrapper">
+          <button type="submit" className="Button">Add drink</button>
+        </div>
+      </form>
+
+    </div>
+  )
+}
     
+
+
+// autoComplete="off"
+
+
+
+####
+####
+####
+####
+#### from Mixologist.js
+import React, {useEffect, useState} from "react"
+
+export default function Mixologist({ mixologistId }){
+  const [mixologist, setMixologist] = useState([])
+
+  useEffect(() => {
+    fetch(`http://localhost:9292/mixologists/${mixologistId}`)
+    .then(r => r.json())
+    .then(mixologist => setMixologist(mixologist))
+  }, [mixologistId])
+
+  function handleMixologistClick(e){
+    console.log(`${mixologist.name} got clicked!`)
+  }
+
+  console.log(mixologist.drinks)
+  
+  const renderDrinks = mixologist.drinks.map(drink => {
+    console.log(drink)
+  })
+
+  // const options =  mixologists.map(mixologist => { 
+  //   return  <option 
+  //             key={mixologist.id} 
+  //             value={mixologist.id}
+  //           >
+  //             {mixologist.name}
+  //           </option>
+  // })
+
+  return(
+    <div>
+      <a className="App-link" onClick={handleMixologistClick}>
+        {mixologist.name}
+      </a>
+      <>{renderDrinks}</>
+               
+    </div>
+  )
+}
+
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+import React, { useEffect, useState } from "react"
+
+import Header from "./Header"
+import Mixologist from "./Mixologist"
+// import DrinkList from "./DrinkList"
+// import NewDrink from "./NewDrink"
+// import NewMixologist from "./NewMixologist"
+import "./App.css"
+
+function App() {
+  const [mixologists, setMixologists] = useState([])
+//   const [drinks, setDrinks] = useState([])
+
+  useEffect(() => {
+    fetch("http://localhost:9292/mixologists")    
+    .then(r => r.json())
+    .then(mixologists => setMixologists(mixologists))
+  }, [])
+
+//   useEffect(() => {
+//     fetch("http://localhost:9292/drinks")
+//     .then(r => r.json())
+//     .then(drinks => setDrinks(drinks))
+//   }, [])
+
+//   function handleAddMixologist(newMixologist){
+//     setMixologists([...mixologists, newMixologist])
+//   }
+
+//   function handleAddDrink(newDrink) {
+//     setDrinks([...drinks, newDrink])
+//   }
+
+//   function handleUpdateDrink(updatedDrink){
+//     const updatedDrinks = drinks.map(drink => {
+//       if(drink.id === updatedDrink.id){
+//         return updatedDrink
+//       }else{
+//         return drink
+//       }
+//     })
+//     setDrinks(updatedDrinks)
+//   }
+
+//   function handleDeleteDrink(id){
+//     const updatedDrinks = drinks.filter(drink => drink.id !== id)
+//     setDrinks(updatedDrinks)
+//   }  
+//   console.log(mixologists)
+//   console.log(drinks)
+
+  return (
+    <div className="App">
+      <div className="Wrapper">
+        <Header />
+        <h2>Mixologists</h2>
+        {mixologists.map(mixologist => (
+// {
+             <Mixologist 
+            key={mixologist.id}
+            mixologistId={mixologist.id} 
+          />
+        ))}
+
+        {/* // <NewDrink onAddDrink={handleAddDrink} mixologists={mixologists} />
+//         <NewMixologist onAddMixologist={handleAddMixologist} />  */}
+
+{/* //         <DrinkList 
+//           drinks={drinks}
+//           mixologists={mixologists}
+//           onAddDrink={handleAddDrink}
+//           onUpdateDrink={handleUpdateDrink} 
+//           onDeleteDrink={handleDeleteDrink} 
+//         />   */}
+      </div>       
+    </div>
+  )
+}
+
+export default App;
