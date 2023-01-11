@@ -1,11 +1,19 @@
-// import EditDrink from './EditDrink'
+import React, {useState} from "react"
+import EditDrink from './EditDrink'
 
-export default function Drink({drink, mixologist}){ 
-// ({drink, onUpdateDrink, onDeleteDrink}){ 
+export default function Drink({drink, mixologist, onUpdateDrink}){ 
+// ({drink, onDeleteDrink}){ 
 
   const {name, instructions, ingredients} = drink
+  const [editDrink, setEditDrink] = useState(false)
 
   // const {id, name, instructions, ingredients, image, mixologist_id} = drink
+
+  const showEditDrink = 
+    editDrink
+    ? <EditDrink drink={drink} onUpdateDrink={onUpdateDrink} />
+    : null
+
 
   // function handleDeleteClick(){
   //   fetch(`http://localhost:9292/drinks/${id}`, {
@@ -33,9 +41,12 @@ export default function Drink({drink, mixologist}){
       
       <h3>{ingredients}</h3>
       <p>{instructions}</p>
-      <p>🍹 Created by {mixologist.name}</p>
+      <p>Created by {mixologist.name}</p>
+      <br />      <a className="App-link" onClick={() => setEditDrink(!editDrink)}>
+        {editDrink ? 'Close Editor' : 'Edit drink'}
+      </a>
+      {showEditDrink}
 
-      {/* <EditDrink drink={drink} onUpdateDrink={onUpdateDrink} /> */}
       {/* <form >
           <label className="label">Name 
           <input className="form-input"

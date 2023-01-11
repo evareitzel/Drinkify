@@ -23,8 +23,7 @@ export default function EditDrink({ drink, onUpdateDrink }){
 
   return(
     <form onSubmit={handleFormSubmit} >
-      <hr className="Separator" />
-      <h4>Edit drink</h4>
+      <br />
       <label>Name
         <input 
           className="Form-input" 

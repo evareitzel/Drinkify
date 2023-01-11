@@ -7,19 +7,17 @@ import "./App.css"
 export default function App() {
   const [mixologists, setMixologists] = useState([])
 
-
   useEffect(() => {
     fetch("http://localhost:9292/mixologists")    
     .then(r => r.json())
     .then(mixologists => setMixologists(mixologists))
   }, [])
-  // console.log(mixologists)
 
   const renderMixologists = mixologists.map(mixologist => (
-  <Mixologist 
-    key={mixologist.id}
-    mixologistId={mixologist.id}
-  />
+    <Mixologist 
+      key={mixologist.id}
+      mixologistId={mixologist.id}
+    />
   ))
 
   return (

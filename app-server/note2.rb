@@ -22,18 +22,6 @@
 //     setDrinks([...drinks, newDrink])
 //   }
 
-  // function handleUpdateDrink(updatedDrink){
-  //   console.log(updatedDrink)
-//     const updatedDrinks = drinks.map(drink => {
-//       if(drink.id === updatedDrink.id){
-        // return updatedDrink
-//       }else{
-        // return drink
-//       }
-//     })
-//     setDrinks(updatedDrinks)
-  // }
-
   // function handleDeleteDrink(id){
   //   const updatedDrinks = drinks.filter(drink => drink.id !== id)
   //   setDrinks(updatedDrinks)

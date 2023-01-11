@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react"
 import Drink from "./Drink"
 
 
-export default function Mixologist({ mixologistId, onUpdateDrink, onDeleteDrink }){
+export default function Mixologist({ mixologistId, onDeleteDrink }){
   const [mixologist, setMixologist] = useState([])
   const [drinks, setDrinks] = useState([])
   const [cards, setCards] = useState(false)
@@ -16,26 +16,35 @@ export default function Mixologist({ mixologistId, onUpdateDrink, onDeleteDrink 
     })
   }, [mixologistId])
 
-// console.log(drinks)
-
 const renderDrinks = drinks.map(drink => {
   return <Drink 
     key={drink.id} 
     drink={drink} 
-    // onUpdateDrink={onUpdateDrink}
+    onUpdateDrink={handleUpdateDrink}
     // onDeleteDrink={onDeleteDrink}
     mixologist={mixologist}
   />
 })
   
   const showCards = 
-  !cards 
-  ? null
-  : renderDrinks
+  cards 
+  ? renderDrinks
+  : null
+
+  function handleUpdateDrink(updatedDrink){
+    console.log(updatedDrink)
+    const updatedDrinks = drinks.map(drink => {
+    if(drink.id === updatedDrink.id){
+      return updatedDrink
+    }else{
+      return drink
+    }
+  })
+    setDrinks(updatedDrinks)
+  }
 
   return(
     <div>
-      {/* <a className="App-link" onClick={handleMixologistClick}> */}
       <a className="App-link" onClick={() => setCards(!cards)}>
         {mixologist.name}
       </a>
