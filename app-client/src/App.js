@@ -24,7 +24,6 @@ export default function App() {
   }, [])
   // console.log(latestDrinks)
 
-
   const renderMixologists = mixologists.map(mixologist => (
     <Mixologist 
       key={mixologist.id}

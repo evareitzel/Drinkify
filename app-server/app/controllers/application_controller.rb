@@ -32,7 +32,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/drinks' do
-    drink = Drink.create(name: params[:name], instructions: params[:instructions])
+    drink = Drink.create(name: params[:name], instructions: params[:instructions], mixologist_id: params[:mixologist_id])
     drink.to_json
   end
 

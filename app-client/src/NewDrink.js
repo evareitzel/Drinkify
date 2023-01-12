@@ -11,7 +11,7 @@ export default function NewDrink({ mixologists, onAddDrink }){
         e.preventDefault()
         window.alert(`${name} added!`)
         // console.log(e.target.value)
-        // console.log(mixologistId)
+        console.log(mixologistId)
     
         const drinkData = {
           name: name,
