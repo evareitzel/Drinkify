@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react"
 
 import Header from "./Header"
 import Mixologist from "./Mixologist"
+import NewDrink from "./NewDrink"
+// import NewMixologist from "./NewMixologist"
 import "./App.css"
 
 export default function App() {
@@ -25,8 +27,11 @@ export default function App() {
       <div className="Wrapper">
         <Header />
         <h2>Mixologists</h2>
-        
         {renderMixologists}
-        </div>       
+        {/* <NewMixologist onAddMixologist={handleAddMixologist} /> */}
+        <NewDrink mixologists={mixologists}/>
+        {/* onAddDrink={handleAddDrink} */}
+      </div>
     </div>
   )}
+

@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react"
 import Drink from "./Drink"
 
-
-export default function Mixologist({ mixologistId, onDeleteDrink }){
+export default function Mixologist({ mixologistId }){
   const [mixologist, setMixologist] = useState([])
   const [drinks, setDrinks] = useState([])
   const [cards, setCards] = useState(false)
@@ -21,7 +20,7 @@ const renderDrinks = drinks.map(drink => {
     key={drink.id} 
     drink={drink} 
     onUpdateDrink={handleUpdateDrink}
-    // onDeleteDrink={onDeleteDrink}
+    onDeleteDrink={handleDeleteDrink}
     mixologist={mixologist}
   />
 })
@@ -29,19 +28,25 @@ const renderDrinks = drinks.map(drink => {
   const showCards = 
   cards 
   ? renderDrinks
-  : null
+  : null 
+  // <p>{mixologist.name} has no drinks yet!</p> // add drink btn
 
   function handleUpdateDrink(updatedDrink){
     console.log(updatedDrink)
     const updatedDrinks = drinks.map(drink => {
     if(drink.id === updatedDrink.id){
-      return updatedDrink
+      return updatedDrink // remove return?
     }else{
-      return drink
+      return drink // remove return?
     }
   })
     setDrinks(updatedDrinks)
   }
+
+  function handleDeleteDrink(id){
+    const updatedDrinks = drinks.filter(drink => drink.id !== id)
+    setDrinks(updatedDrinks)
+  }  
 
   return(
     <div>

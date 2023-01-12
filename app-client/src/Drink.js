@@ -1,13 +1,12 @@
 import React, {useState} from "react"
 import EditDrink from './EditDrink'
 
-export default function Drink({drink, mixologist, onUpdateDrink}){ 
-// ({drink, onDeleteDrink}){ 
+export default function Drink({drink, mixologist, onUpdateDrink, onDeleteDrink}){ 
 
-  const {name, instructions, ingredients} = drink
+  const {id, name, instructions, ingredients} = drink
   const [editDrink, setEditDrink] = useState(false)
 
-  // const {id, name, instructions, ingredients, image, mixologist_id} = drink
+  // const {image, mixologist_id} = drink
 
   const showEditDrink = 
     editDrink
@@ -15,12 +14,14 @@ export default function Drink({drink, mixologist, onUpdateDrink}){
     : null
 
 
-  // function handleDeleteClick(){
-  //   fetch(`http://localhost:9292/drinks/${id}`, {
-  //     method: "DELETE",
-  //   });
-  //   onDeleteDrink(id)
-  // }
+  function handleDeleteClick(){
+    window.alert(`${name}, bye 👋👋`)
+
+    fetch(`http://localhost:9292/drinks/${id}`, {
+      method: "DELETE",
+    });
+    onDeleteDrink(id)
+  }
 
   // function show_author(user_id){
     // const found = users.find(user =>
@@ -41,20 +42,19 @@ export default function Drink({drink, mixologist, onUpdateDrink}){
       
       <h3>{ingredients}</h3>
       <p>{instructions}</p>
-      <p>Created by {mixologist.name}</p>
-      <br />      <a className="App-link" onClick={() => setEditDrink(!editDrink)}>
-        {editDrink ? 'Close Editor' : 'Edit drink'}
+      <p>🍹 Created by {mixologist.name}</p>
+      <br />      
+      
+      <a className="App-link" onClick={() => setEditDrink(!editDrink)}>
+        Edit {editDrink ? ' 🡠' : ' 🡢'}
       </a>
-      {showEditDrink}
+      <span> | </span>
 
-      {/* <a className="App-link" href="#" onClick={handleDeleteClick}>
-        Delete drink
-      </a> */}
-
-      {/* <a className="App-link"  onClick={handleDeleteClick} >
+      <a className="App-link" onClick={handleDeleteClick} >
         Delete
-      </a> */}
-      {/* add popup window confirming that drink was destroyed! */}
+      </a>
+
+      {showEditDrink}
     </div>
   )
 } 
