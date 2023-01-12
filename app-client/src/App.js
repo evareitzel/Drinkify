@@ -23,11 +23,13 @@ export default function App() {
     .then(latestDrinks => setLatestDrinks(latestDrinks))
   }, [])
   // console.log(latestDrinks)
+  // console.log(mixologists[1])
 
   const renderMixologists = mixologists.map(mixologist => (
     <Mixologist 
       key={mixologist.id}
-      mixologistId={mixologist.id}
+      mixologistId={mixologist.id}      
+      mixologistObj = {mixologist} // 1/12
     />
   ))
 

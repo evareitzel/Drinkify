@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   
   get '/mixologists' do
     mixologists = Mixologist.all
-    mixologists.to_json
+    mixologists.to_json(include: :drinks)
   end
 
   get '/mixologists/:id' do

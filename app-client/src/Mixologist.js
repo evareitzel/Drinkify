@@ -1,12 +1,15 @@
 import React, {useEffect, useState} from "react"
 import Drink from "./Drink"
 
-export default function Mixologist({ mixologistId }){
-    // remove state
+export default function Mixologist({ mixologistObj, mixologistId }){
   const [mixologist, setMixologist] = useState([])
+
+  // remove state
   const [drinks, setDrinks] = useState([])
   const [cards, setCards] = useState(false)
 
+  // setMixologist(mixologist)
+  //     setDrinks(mixologist.drinks)
   // no fetch, get data from mixol
   useEffect(() => {
     fetch(`http://localhost:9292/mixologists/${mixologistId}`)
@@ -18,19 +21,20 @@ export default function Mixologist({ mixologistId }){
   }, [mixologistId])
 
   ////
+  // console.log(mixologistObj.drinks)
+  const drinksObj = mixologistObj.drinks
+  // console.log(drinksObj)
 
-  console.log(mixologist)
-  console.log(mixologist.drinks)
-
-const renderDrinks = drinks.map(drink => {
-  return <Drink 
-    key={drink.id} 
-    drink={drink} 
-    onUpdateDrink={handleUpdateDrink}
-    onDeleteDrink={handleDeleteDrink}
-    mixologist={mixologist}
-  />
-})
+  const renderDrinks = drinksObj.map(drink => {
+  // const renderDrinks = drinks.map(drink => {
+    return <Drink 
+      key={drink.id} 
+      drink={drink} 
+      onUpdateDrink={handleUpdateDrink}
+      onDeleteDrink={handleDeleteDrink}
+      mixologist={mixologist}
+    />
+  })
   
   const showCards = 
   cards 
