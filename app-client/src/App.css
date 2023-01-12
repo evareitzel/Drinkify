@@ -1,17 +1,13 @@
 .App {
-  /* background-color: #282c34; */
   text-align: center;
   background-color: #212121;
   color: white;
-  /* width: 100%;
-  height: 100% 
-  (make black BG occupy viewport)*/
 }
 
 .Wrapper {
-  text-align: center;
   width: 500px;
   padding: 20px 0 200px 0;
+  /* needed? refactor?  */
 }
 
 .App-header {
@@ -54,16 +50,12 @@
 }
 
 .Card {
-  border: 1px solid white;/* #021aee; */
+  border: 1px solid white;
   border-radius: 16px;
   padding: 40px;
   margin: 40px;
   text-align: left;
 }
-
-/* .Drink-list {
-  margin: none;
-} */
 
 .Dropdown {
   margin-left: 8px
@@ -96,10 +88,6 @@
   color: white;
 }
 
-.Form-wrapper {
-  padding-top: 50px;
-}
-
 .Separator {
   background: #fff;
   margin: 40px 0;
@@ -109,6 +97,14 @@
   border-radius: 8px;
   width: 100%;
 }
+
+/* .Drink-list {
+  margin: none;
+} */
+
+/* .Form-wrapper {
+  padding-top: 50px;
+} */
 
 /* .Label {
   font-size: 16px; 

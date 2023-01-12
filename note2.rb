@@ -1,44 +1,5 @@
 
-// import DrinkList from "./DrinkList"
 
-  const [drinks, setDrinks] = useState([])
-
-
-
-//   useEffect(() => {
-//     fetch("http://localhost:9292/drinks")
-//     .then(r => r.json())
-//     .then(drinks => setDrinks(drinks))
-//   }, [])
-
-//   function handleAddMixologist(newMixologist){
-//     setMixologists([...mixologists, newMixologist])
-//   }
-
-//   function handleAddDrink(newDrink) {
-//     setDrinks([...drinks, newDrink])
-//   }
-
-
-// const renderMixologists = mixologists.map(mixologist => (
-//   <Mixologist 
-//     key={mixologist.id}
-//     mixologistId={mixologist.id}
-//     onUpdateDrink={handleUpdateDrink}
-//     onDeleteDrink={handleDeleteDrink} 
-// />
-// ))
-
-
-{/* <a className="App-link" href="#" >
-  Add new drink
-</a> */}
-
-        {/* // <NewDrink onAddDrink={handleAddDrink} mixologists={mixologists} />
-//         <NewMixologist onAddMixologist={handleAddMixologist} />  */}
-
-
-}
 
 ##
 ##

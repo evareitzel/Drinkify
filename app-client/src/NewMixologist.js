@@ -3,6 +3,8 @@ import React, { useState } from "react"
 export default function NewMixologist({ onAddMixologist }){
   const [name, setName] = useState("")
 
+  console.log(name)
+
   function handleSubmit(e){
     e.preventDefault()
 
@@ -13,37 +15,32 @@ export default function NewMixologist({ onAddMixologist }){
       },
       body: JSON.stringify({
         name: name,
-        // key: name,
       }),
     })
-      .then(r => r.json())
-      .then(newMixologist => {
-        onAddMixologist(newMixologist)
-        setName("")
-      })
+    .then(r => r.json())
+    .then(newMixologist => {
+      // console.log(newMixologist)
+      onAddMixologist(newMixologist)
+    })
   }
 
   return(
-    <div className="Form-wrapper">
-      
+    <form onSubmit={handleSubmit} className="Form">
+      <hr className="Separator"/>
       <h2>Add mixologist</h2>
-      <form className="Form" onSubmit={handleSubmit}>
-        <label>Name
-          <input
-            className="Form-input"
-            type="text"
-            name="name"
-            // autoComplete="off"
-            value={name}
-            onChange={e => setName(e.target.value)}
-          />
-        </label>
-
-        <div className="Button-wrapper">
-          <button type="submit" className="Button">Add mixologist</button>
-        </div>
-      </form>
-
-    </div>
+      <label>
+        Name
+        <input 
+          onChange={e => setName(e.target.value)}
+          // type="text"
+          // value={name}
+          placeholder="Your name"
+          className="Form-input"
+        />
+      </label>
+      <div className="Button-wrapper">
+        <button type="submit" className="Button">Add mixologist</button>
+      </div>
+    </form>
   )
 }

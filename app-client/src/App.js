@@ -3,17 +3,27 @@ import React, { useEffect, useState } from "react"
 import Header from "./Header"
 import Mixologist from "./Mixologist"
 import NewDrink from "./NewDrink"
-// import NewMixologist from "./NewMixologist"
+import NewMixologist from "./NewMixologist"
 import "./App.css"
 
 export default function App() {
   const [mixologists, setMixologists] = useState([])
+  const [latestDrinks, setLatestDrinks] = useState([])
+  // console.log(mixologists)
 
   useEffect(() => {
     fetch("http://localhost:9292/mixologists")    
     .then(r => r.json())
     .then(mixologists => setMixologists(mixologists))
   }, [])
+
+  useEffect(() => {
+    fetch("http://localhost:9292/drinks")
+    .then(r => r.json())
+    .then(latestDrinks => setLatestDrinks(latestDrinks))
+  }, [])
+  // console.log(latestDrinks)
+
 
   const renderMixologists = mixologists.map(mixologist => (
     <Mixologist 
@@ -22,16 +32,22 @@ export default function App() {
     />
   ))
 
+  function handleAddMixologist(newMixologist){
+    setMixologists([...mixologists, newMixologist])
+  }
+
   return (
     <div className="App">
       <div className="Wrapper">
         <Header />
         <h2>Mixologists</h2>
         {renderMixologists}
-        {/* <NewMixologist onAddMixologist={handleAddMixologist} /> */}
-        <NewDrink mixologists={mixologists}/>
-        {/* onAddDrink={handleAddDrink} */}
+        <NewDrink mixologists={mixologists} /> {/* onAddDrink={handleAddDrink} */}
+        <NewMixologist onAddMixologist={handleAddMixologist} />
       </div>
     </div>
   )}
 
+    // function handleAddDrink(newDrink) {
+  //   setDrinks([...drinks, newDrink])
+  // }

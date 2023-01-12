@@ -21,8 +21,13 @@ class ApplicationController < Sinatra::Base
     mixologist.to_json
   end
 
+  # get '/drinks' do
+  #   drinks = Drink.all #.limit(5) # .order(:updated_at) / (:created_at) - before .limit
+  #   drinks.to_json
+  # end
+
   get '/drinks' do
-    drinks = Drink.all #.limit(5) # .order(:updated_at) / (:created_at) - before .limit
+    drinks = Drink #.limit(5) # .order(:updated_at) / (:created_at) - before .limit
     drinks.to_json
   end
 

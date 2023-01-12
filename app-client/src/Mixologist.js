@@ -35,9 +35,9 @@ const renderDrinks = drinks.map(drink => {
     console.log(updatedDrink)
     const updatedDrinks = drinks.map(drink => {
     if(drink.id === updatedDrink.id){
-      return updatedDrink // remove return?
+      return updatedDrink
     }else{
-      return drink // remove return?
+      return drink
     }
   })
     setDrinks(updatedDrinks)
