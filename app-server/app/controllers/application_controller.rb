@@ -40,8 +40,8 @@ class ApplicationController < Sinatra::Base
     drink = Drink.find(params[:id])
     drink.update(
       name: params[:name],
-      instructions: params[:instructions] # ,
-      # ingredients: params[:ingredients]
+      ingredients: params[:ingredients],
+      instructions: params[:instructions]
     )
     drink.to_json
   end

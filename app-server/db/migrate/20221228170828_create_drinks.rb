@@ -4,7 +4,6 @@ class CreateDrinks < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :instructions
       t.string :ingredients
-      t.string :image
 
       t.integer :mixologist_id
       t.timestamps

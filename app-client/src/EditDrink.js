@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
 export default function EditDrink({ drink, onUpdateDrink }){
-  const { name, id } = drink //, instructions_en
+  const { name, id, ingredients, instructions } = drink
   const [drinkName, setDrinkName] = useState(name)
-  // const [instructions, setInstructions] = useState(ingredients)
-  // const [instructions, setInstructions] = useState(instructions_en)
+  const [drinkIngredients, setDrinkIngredients] = useState(ingredients)
+  const [drinkInstructions, setDrinkInstructions] = useState(instructions)
+
 
   function handleFormSubmit(e){
     e.preventDefault();
+    console.log(e.target.value)
 
     fetch(`http://localhost:9292/drinks/${id}`, {
       method: "PATCH",
@@ -16,11 +18,16 @@ export default function EditDrink({ drink, onUpdateDrink }){
       },
       body: JSON.stringify({
         name: drinkName,
+        instructions: drinkInstructions,
+        ingredients: drinkIngredients,
+
       }),
     })
     .then(r => r.json())
     .then(updatedDrink => onUpdateDrink(updatedDrink))
   }
+
+  // console.log(drinkIngredients)
 
   return(
     <form onSubmit={handleFormSubmit} >
@@ -34,54 +41,28 @@ export default function EditDrink({ drink, onUpdateDrink }){
           onChange={e => setDrinkName(e.target.value)}      
         />
       </label>
-      
+      <label>
+        Ingredients
+        <input 
+          className="Form-input" 
+          type="text"
+          name="ingredients"
+          value={drinkIngredients}
+          onChange={e => setDrinkIngredients(e.target.value)}      
+      />
+      </label>
       <label>
         Instructions
-        <input />
+        <input 
+          className="Form-input" 
+          type="text"
+          name="instructions"
+          value={drinkInstructions}
+          onChange={e => setDrinkInstructions(e.target.value)}      
+        />
       </label>
-      <br /> {/* remove */}
-      <label>
-      Ingredients
-      <input />
-      </label>
-      <br /> {/* remove */}
-
 
       <input type="submit" value="Save" className="Ghost-button" />
     </form>
   )
 }
-
-//       {/* <label>Ingredients
-//       <input 
-//         className="Form-input"
-//         type="text"
-//         name="name"
-//         value={drinkName}
-//         onChange={e => setDrinkName(e.target.value)}      
-//       />
-
-// <input 
-//         className="Form-input"
-//         type="text"
-//         name="name"
-//         value={drinkName}
-//         onChange={e => setDrinkName(e.target.value)}      
-//       />
-
-// <input 
-//         className="Form-input"
-//         type="text"
-//         name="name"
-//         value={drinkName}
-//         onChange={e => setDrinkName(e.target.value)}      
-//       />
-
-//       </label>
-//       <input 
-//         className="Form-input"
-//         type="text"
-//         name="instructions"
-//         value={instructions_en}
-//         onChange={e => setInstructions(e.target.value)}      
-//       /> */}

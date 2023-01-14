@@ -33,7 +33,6 @@ export default function App() {
     />
   ))
 
-  ////////////
   function handleUpdateDrink(updatedDrink){
     const found = mixologists.find(mixologist => (
       mixologist.id == updatedDrink.mixologist_id
@@ -42,37 +41,17 @@ export default function App() {
     const updatedDrinks = found.drinks.map(drink => (
       drink.id === updatedDrink.id ? updatedDrink : drink
     ))
-    console.log(updatedDrinks) // wkg
-
-    // const updatedMixologists = 
-    // mixologists.find(mixologist => {
-
-    // })
-    //   if
-    //   ...
-    console.log(found)
 
     const updatedMixologists = mixologists.map(mixologist => {
-      if(mixologist.id == found.id){
+      if(mixologist.id === found.id){
         mixologist.drinks = updatedDrinks
         return mixologist
       }else{
         return mixologist
       }
     })
-    console.log(updatedMixologists)
-
-    setMixologists(updatedMixologists)// set state
+    setMixologists(updatedMixologists)
   }
-  // const updatedMixologist = () => {found.drinks === updatedDrinks}
-    // console.log(updatedMixologist)
-
-    // const updatedMixologist = mixologists.find(mixologist => mixologist === found) // (mixologist.id === found.id){
-        // update nested drinks obj and return mixologist?       
-      // }
-      // drinks = updatedDrinks
-    // console.log(updatedMixologist) // NOT LOGGING TO CONSOLE
-
 
   function handleAddMixologist(newMixologist){
     setMixologists([...mixologists, newMixologist])
