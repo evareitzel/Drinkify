@@ -815,3 +815,25 @@ export default function Search(){
   className="form-input"
 />
 </label> */}
+
+#
+#
+#
+# // PSEUDOCODE FROM App.js
+// to update state:
+      // in mixologists, find mixologist w matching ID
+      // replace the mixologist's drinks array
+      // setMixologists() with updated arr
+
+  // console.log(updatedDrink) 
+    // is drink passing mixologist id? 
+      // can drink access mixologist id? (ex: drink.mixologist_id)
+      // could this be an opportunity for writing an instance method in Drink class (ex: updatedDrink.mixologist - gets mixologist obj associated with foreign key)
+// Pseudocode for handleUpdateDrink
+// mixologists.map(mixologist => 
+// find mixologist with matching ID from edited drink
+ // 
+// find mixologist's drink matching edited drink (id?)
+// if the drink matches, update drink data
+// else return existing drink
+// update mixologist state containing drinks hash

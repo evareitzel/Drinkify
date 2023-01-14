@@ -3,6 +3,7 @@ import React, { useState } from "react";
 export default function EditDrink({ drink, onUpdateDrink }){
   const { name, id } = drink //, instructions_en
   const [drinkName, setDrinkName] = useState(name)
+  // const [instructions, setInstructions] = useState(ingredients)
   // const [instructions, setInstructions] = useState(instructions_en)
 
   function handleFormSubmit(e){
@@ -14,7 +15,7 @@ export default function EditDrink({ drink, onUpdateDrink }){
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: drinkName, // ?
+        name: drinkName,
       }),
     })
     .then(r => r.json())
