@@ -33,6 +33,18 @@ export default function EditDrink({ drink, onUpdateDrink }){
           onChange={e => setDrinkName(e.target.value)}      
         />
       </label>
+      
+      <label>
+        Instructions
+        <input />
+      </label>
+      <br /> {/* remove */}
+      <label>
+      Ingredients
+      <input />
+      </label>
+      <br /> {/* remove */}
+
 
       <input type="submit" value="Save" className="Ghost-button" />
     </form>
