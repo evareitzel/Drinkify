@@ -837,3 +837,18 @@ export default function Search(){
 // if the drink matches, update drink data
 // else return existing drink
 // update mixologist state containing drinks hash
+
+#
+#
+#
+# from application_controller.rb
+
+# get '/drinks' do
+#   drinks = Drink.all #.limit(5) # .order(:updated_at) / (:created_at) - before .limit
+#   drinks.to_json
+# end
+
+  # get '/mixologists/:id' do
+#   mixologist = Mixologist.find(params[:id])
+#   mixologist.to_json(include: :drinks)
+# end

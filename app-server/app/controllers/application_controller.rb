@@ -11,28 +11,22 @@ class ApplicationController < Sinatra::Base
     mixologists.to_json(include: :drinks)
   end
 
-  get '/mixologists/:id' do
-    mixologist = Mixologist.find(params[:id])
-    mixologist.to_json(include: :drinks)
-  end
-
   post '/mixologists' do
     mixologist = Mixologist.create(name: params[:name])
     mixologist.to_json
   end
 
-  # get '/drinks' do
-  #   drinks = Drink.all #.limit(5) # .order(:updated_at) / (:created_at) - before .limit
-  #   drinks.to_json
-  # end
-
   get '/drinks' do
-    drinks = Drink #.limit(5) # .order(:updated_at) / (:created_at) - before .limit
+    drinks = Drink #.limit(5) # .order(:updated_at) / (:created_at) - before .limit // Drink.all
     drinks.to_json
   end
 
   post '/drinks' do
-    drink = Drink.create(name: params[:name], instructions: params[:instructions], mixologist_id: params[:mixologist_id])
+    drink = Drink.create(
+      name: params[:name],
+      instructions: params[:instructions],
+      mixologist_id: params[:mixologist_id]
+    )
     drink.to_json
   end
 
