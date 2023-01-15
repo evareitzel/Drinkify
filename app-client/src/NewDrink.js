@@ -1,87 +1,90 @@
 import React, { useState } from "react"
 
-export default function NewDrink({ mixologists, onAddDrink }){
+export default function NewDrink({ mixologists, onAddDrink}) {
+
   const [name, setName] = useState("")
-  const [ingredients, 
+  const [ingredients,
     setIngredients] = useState("")
   const [instructions, setInstructions] = useState("")
-  const [mixologistId, setMixologistId] = useState()
+  const [mixologistId, setMixologistId] = useState("")
 
-  function handleSubmit(e){
-        e.preventDefault()
-        window.alert(`${name} added!`)
-        // console.log(mixologistId)
+  function handleSubmit(e) {
+    e.preventDefault()
+    window.alert(`${name} added!`)
     
-        const drinkData = {
-          name: name,
-          ingredients: ingredients,
-          instructions: instructions,
-          mixologist_id: mixologistId
-        }
-    // console.log(drinkData)
+    fetch("http://localhost:9292/drinks", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        ingredients: ingredients,
+        instructions: instructions,
+        mixologist_id: mixologistId
+      }),
+    })
+    .then(r => r.json())
+    .then(newDrink => {
+      onAddDrink(newDrink)
+    })
+    setName("")
+    setIngredients("")
+    setInstructions("")
+    setMixologistId("")
+  }
 
-        fetch("http://localhost:9292/drinks", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(drinkData),
-        })
-          .then(r => r.json())
-          .then(newDrink => {
-            onAddDrink(newDrink)
-          })
-      }
+  const options = mixologists.map(mixologist => {
+    return <option
+      key={mixologist.id}
+      value={mixologist.id}
+    >
+      {mixologist.name}
+    </option>
+  })
 
-  const options =  mixologists.map(mixologist => { 
-    return <option  
-            key={mixologist.id} 
-            value={mixologist.id}
-          >
-            {mixologist.name}
-          </option>
-  }) 
-
-  return(
+  return (
     <div>
-      <hr className="Separator"/>
+      <hr className="Separator" />
       <h2>Add drink</h2>
-      {/* Clear form fields */}
       <form className="Form" onSubmit={handleSubmit}>
         <label>Name
           <input
-            onChange={e => setName(e.target.value)} 
+            onChange={e => setName(e.target.value)}
             placeholder="Drink name"
-            // type="text"
+            type="text"
+            value={name}
+            required
             className="Form-input"
           />
         </label>
         <label>Ingredients
-          <input 
+          <input
             onChange={e => setIngredients(e.target.value)}
-            placeholder="Sugar, spice, everything nice" 
+            placeholder="Sugar, spice, everything nice"
+            type="text"
+            value={ingredients}
             className="Form-input"
-            // type="text"
-          /> 
+          />
         </label>
         <label>Instructions
-          <input 
+          <input
             onChange={e => setInstructions(e.target.value)}
-            placeholder="First things first..." 
+            placeholder="First things first..."
+            type="text"
+            value={instructions}
             className="Form-input"
-            // type="text"
-          /> 
+          />
         </label>
         <label>
           Created by:
-          {/* - Set initial state to "pick mixologist OR a default (last created?) value"
-          - set as a required value */}
-          <select 
+          <select
+            onChange={e => setMixologistId(e.target.value)}
             value={mixologistId}
-            onChange={e => setMixologistId(e.target.value)} // parseInt
-            // value={mixologistId} 
+            required
             className="Dropdown"
           >
+            <option></option>
             {options}
           </select>
         </label>

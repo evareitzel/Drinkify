@@ -21,7 +21,7 @@ export default function App() {
     fetch("http://localhost:9292/drinks")
     .then(r => r.json())
     .then(latestDrinks => setLatestDrinks(latestDrinks))
-  }, [])
+  }, [mixologists]) // this effect synchronzes with mixologists state
 
   function handleAddDrink(newDrink) {
     // find mixologist drink belongs to
@@ -39,9 +39,6 @@ export default function App() {
         return mixologist
       }
     })
-    // update latest drinks state (add latest drink)
-    latestDrinks.pop()
-    setLatestDrinks([newDrink, ...latestDrinks])
     setMixologists(updated)
   }
 
@@ -82,10 +79,12 @@ export default function App() {
       return mixologist
     })
     setMixologists(updated)
+    // setLatestDrinks()
+    // setLatestDrinks(latestDrinks.splice(0, 4)) 
   }
 
   function handleAddMixologist(newMixologist){
-    newMixologist.drinks = [] // add Drinks arr
+    newMixologist.drinks = []
     setMixologists([...mixologists, newMixologist])
   }
 

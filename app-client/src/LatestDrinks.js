@@ -1,7 +1,7 @@
 export default function LatestDrinks({drinks}){
 
   const renderDrinks = drinks.map(drink => (
-        <div className="Card">
+        <div className="Card" key={drink.id}>
           <h2>{drink.name}</h2>
           <h3>{drink.ingredients}</h3>
           <p>{drink.instructions}</p>

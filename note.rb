@@ -935,3 +935,16 @@ export default function Search(){
       #
       # from get './drinks' do ... in application_controller
       #(:updated_at) /  - before .limit // Drink.all
+
+      #
+      #
+      #
+      #
+      # From App.js
+
+      handleAddDrink -
+      // update latest drinks state (add latest drink)
+      // latestDrinks.pop()
+      // setLatestDrinks([newDrink, ...latestDrinks])
+
+      useEffect for latestDrinks - // this effect synchronzes with mixologists state

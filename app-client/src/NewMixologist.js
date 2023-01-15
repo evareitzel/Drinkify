@@ -5,6 +5,8 @@ export default function NewMixologist({ onAddMixologist }){
 
   function handleSubmit(e){
     e.preventDefault()
+    window.alert(`${name} is added!`)
+
 
     fetch("http://localhost:9292/mixologists", {
       method: "POST",
@@ -17,9 +19,9 @@ export default function NewMixologist({ onAddMixologist }){
     })
     .then(r => r.json())
     .then(newMixologist => {
-      // console.log(newMixologist)
       onAddMixologist(newMixologist)
     })
+    setName("")
   }
 
   return(
@@ -30,9 +32,10 @@ export default function NewMixologist({ onAddMixologist }){
         Name
         <input 
           onChange={e => setName(e.target.value)}
-          // type="text"
-          // value={name}
           placeholder="Your name"
+          type="text"
+          value={name}
+          required
           className="Form-input"
         />
       </label>

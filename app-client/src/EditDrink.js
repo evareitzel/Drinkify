@@ -31,31 +31,32 @@ export default function EditDrink({ drink, onUpdateDrink }) {
       <br />
       <label>Name
         <input
-          className="Form-input"
-          type="text"
-          name="name"
-          value={drinkName}
           onChange={e => setDrinkName(e.target.value)}
+          type="text"
+          // name="name"
+          value={drinkName}
+          required
+          className="Form-input"
         />
       </label>
       <label>
         Ingredients
         <input
-          className="Form-input"
-          type="text"
-          name="ingredients"
-          value={drinkIngredients}
           onChange={e => setDrinkIngredients(e.target.value)}
+          type="text"
+          // name="ingredients"
+          value={drinkIngredients}
+          className="Form-input"
         />
       </label>
       <label>
         Instructions
-        <input
-          className="Form-input"
-          type="text"
-          name="instructions"
-          value={drinkInstructions}
+        <textarea rows="4"
           onChange={e => setDrinkInstructions(e.target.value)}
+          type="text"
+          // name="instructions"
+          value={drinkInstructions}
+          className="Form-input"
         />
       </label>
 
