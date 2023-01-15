@@ -948,3 +948,59 @@ export default function Search(){
       // setLatestDrinks([newDrink, ...latestDrinks])
 
       useEffect for latestDrinks - // this effect synchronzes with mixologists state
+
+      "Every
+thing working - Drink CRUD, Mixologist CR, required form fields & reset inputs after submit, Effect fetching latestDrinks synchs with mixologists state" 
+
+
+Hellrazer xoxo
+Skulls, gasoline, and true romance
+Beloved by motorcycle gangs <3
+
+🍹 Created by Louella
+
+
+
+#
+#
+#
+# from Mixologist.rb
+####
+
+
+
+# drinks = Drink.all
+# drink_objs = Mixologist.drinks
+
+# has_many :drinks do
+  # drink_objs = []
+
+  # self.drinks.each do |drink|
+  #   drink_objs << drink
+  # end
+# end
+
+# //   current_user.favorites.each do |favourite|
+#   //   = favourite.colors
+#   // end
+
+# attr_accessor :drinks
+
+# Try editing out and see if app still works
+# def self.create_with_name(name)
+#   Mixologist.create(name: name)
+# end
+
+#
+#
+#
+# App.js
+// import "./App.css"
+
+#
+#
+#
+# index.js
+// import App from './App';
+
+
