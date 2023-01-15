@@ -2,22 +2,21 @@ import React, { useState } from "react"
 
 export default function NewDrink({ mixologists, onAddDrink }){
   const [name, setName] = useState("")
-  const [ingredients, setIngredients] = useState("")
+  const [ingredients, 
+    setIngredients] = useState("")
   const [instructions, setInstructions] = useState("")
-  const [mixologistId, setMixologistId] = useState() // (mixologists[0].id) // works if saved BEFORE page refresh
-    // could solve with a "choose mixologist" non-value dropdown initial state?
+  const [mixologistId, setMixologistId] = useState()
 
   function handleSubmit(e){
         e.preventDefault()
         window.alert(`${name} added!`)
-        // console.log(e.target.value)
         console.log(mixologistId)
     
         const drinkData = {
           name: name,
           ingredients: ingredients,
           instructions: instructions,
-          mixologist_id: mixologistId // FIX // parseInt?
+          mixologist_id: mixologistId
         }
     console.log(drinkData)
 
@@ -61,7 +60,8 @@ export default function NewDrink({ mixologists, onAddDrink }){
           <input 
             onChange={e => setIngredients(e.target.value)}
             placeholder="Sugar, spice, everything nice" 
-            className="Form-input"  
+            className="Form-input"
+            // type="text"
           /> 
         </label>
         <label>Instructions

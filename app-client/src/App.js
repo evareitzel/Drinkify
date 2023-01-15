@@ -23,23 +23,11 @@ export default function App() {
   }, [])
   // console.log(latestDrinks)
 
-  function handleDeleteDrink(id, mixologist_id){
-
-    const found = mixologists.find(mixologist => {
-      return mixologist.id === mixologist_id
-    })
-    
-    const updatedDrinks = found.drinks.filter(drink => {
-      return drink.id !== id
-    })
-
-    const updated = mixologists.map(mixologist =>{
-      if(mixologist.id === mixologist_id){
-        mixologist.drinks = updatedDrinks
-      }    
-      return mixologist
-    })
-    setMixologists(updated)
+  function handleAddDrink(newDrink) {
+    // find mixologist drink belongs to
+      // add to mixoligist's drinks arr
+    // update Mixologist state
+    // update latest drinks state (add latest drink)
   }
 
   function handleUpdateDrink(updatedDrink){
@@ -62,12 +50,29 @@ export default function App() {
     setMixologists(updatedMixologists)
   }
 
+  function handleDeleteDrink(id, mixologist_id){
+
+    const found = mixologists.find(mixologist => {
+      return mixologist.id === mixologist_id
+    })
+    
+    const updatedDrinks = found.drinks.filter(drink => {
+      return drink.id !== id
+    })
+
+    const updated = mixologists.map(mixologist =>{
+      if(mixologist.id === mixologist_id){
+        mixologist.drinks = updatedDrinks
+      }    
+      return mixologist
+    })
+    setMixologists(updated)
+  }
+
   function handleAddMixologist(newMixologist){
     newMixologist.drinks = [] // add Drinks arr
     setMixologists([...mixologists, newMixologist])
   }
-
-  console.log(mixologists)
 
   const renderMixologists = mixologists.map(mixologist => (
     <Mixologist 
@@ -85,12 +90,8 @@ export default function App() {
         <Header />
         <h2>Mixologists</h2>
         {renderMixologists}
-        {/* <NewDrink mixologists={mixologists} onAddDrink={handleAddDrink} />  */}
+        <NewDrink mixologists={mixologists} onAddDrink={handleAddDrink} /> 
         <NewMixologist onAddMixologist={handleAddMixologist} />
       </div>
     </div>
   )}
-
-    // function handleAddDrink(newDrink) {
-  //   setDrinks([...drinks, newDrink])
-  // }

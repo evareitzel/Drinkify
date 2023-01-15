@@ -26,6 +26,7 @@ class ApplicationController < Sinatra::Base
   post '/drinks' do
     drink = Drink.create(
       name: params[:name],
+      ingredients: params[:ingredients],
       instructions: params[:instructions],
       mixologist_id: params[:mixologist_id],
     )
