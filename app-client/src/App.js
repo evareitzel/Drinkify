@@ -4,6 +4,7 @@ import Header from "./Header"
 import Mixologist from "./Mixologist"
 import NewDrink from "./NewDrink"
 import NewMixologist from "./NewMixologist"
+import LatestDrinks from "./LatestDrinks"
 import "./App.css"
 
 export default function App() {
@@ -21,7 +22,6 @@ export default function App() {
     .then(r => r.json())
     .then(latestDrinks => setLatestDrinks(latestDrinks))
   }, [])
-  console.log(latestDrinks)
 
   function handleAddDrink(newDrink) {
     // find mixologist drink belongs to
@@ -40,7 +40,8 @@ export default function App() {
       }
     })
     // update latest drinks state (add latest drink)
-    // setLatestDrinks([newDrink, latestDrinks.splice(3)])
+    latestDrinks.pop()
+    setLatestDrinks([newDrink, ...latestDrinks])
     setMixologists(updated)
   }
 
@@ -106,6 +107,7 @@ export default function App() {
         {renderMixologists}
         <NewDrink mixologists={mixologists} onAddDrink={handleAddDrink} /> 
         <NewMixologist onAddMixologist={handleAddMixologist} />
+        <LatestDrinks latestDrinks={latestDrinks} />
       </div>
     </div>
   )}
