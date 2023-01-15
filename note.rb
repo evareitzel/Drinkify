@@ -929,3 +929,9 @@ export default function Search(){
       //   }
       // ] // test
 
+      #
+      #
+      #
+      #
+      # from get './drinks' do ... in application_controller
+      #(:updated_at) /  - before .limit // Drink.all

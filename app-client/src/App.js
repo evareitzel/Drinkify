@@ -21,7 +21,7 @@ export default function App() {
     .then(r => r.json())
     .then(latestDrinks => setLatestDrinks(latestDrinks))
   }, [])
-  // console.log(latestDrinks)
+  console.log(latestDrinks)
 
   function handleAddDrink(newDrink) {
     // find mixologist drink belongs to
@@ -29,7 +29,6 @@ export default function App() {
       mixologist.id == newDrink.mixologist_id
     ))
 
-    console.log(found)
     // add to mixoligist's drinks arr
     // update Mixologist state
     const updated = mixologists.map(mixologist => {
@@ -40,8 +39,8 @@ export default function App() {
         return mixologist
       }
     })
-    // console.log(updated)
     // update latest drinks state (add latest drink)
+    // setLatestDrinks([newDrink, latestDrinks.splice(3)])
     setMixologists(updated)
   }
 

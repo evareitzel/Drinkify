@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/drinks' do
-    drinks = Drink #.limit(5) # .order(:updated_at) / (:created_at) - before .limit // Drink.all
+    drinks = Drink.all.order(:created_at).reverse_order.limit(5)
     drinks.to_json
   end
 
