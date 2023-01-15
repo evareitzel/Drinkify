@@ -25,9 +25,24 @@ export default function App() {
 
   function handleAddDrink(newDrink) {
     // find mixologist drink belongs to
-      // add to mixoligist's drinks arr
+    const found = mixologists.find(mixologist => (
+      mixologist.id == newDrink.mixologist_id
+    ))
+
+    console.log(found)
+    // add to mixoligist's drinks arr
     // update Mixologist state
+    const updated = mixologists.map(mixologist => {
+      if(mixologist.id === found.id){
+        mixologist.drinks = [...mixologist.drinks, newDrink]
+        return mixologist
+      }else{
+        return mixologist
+      }
+    })
+    // console.log(updated)
     // update latest drinks state (add latest drink)
+    setMixologists(updated)
   }
 
   function handleUpdateDrink(updatedDrink){

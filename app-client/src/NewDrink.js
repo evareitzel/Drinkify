@@ -10,7 +10,7 @@ export default function NewDrink({ mixologists, onAddDrink }){
   function handleSubmit(e){
         e.preventDefault()
         window.alert(`${name} added!`)
-        console.log(mixologistId)
+        // console.log(mixologistId)
     
         const drinkData = {
           name: name,
@@ -18,7 +18,7 @@ export default function NewDrink({ mixologists, onAddDrink }){
           instructions: instructions,
           mixologist_id: mixologistId
         }
-    console.log(drinkData)
+    // console.log(drinkData)
 
         fetch("http://localhost:9292/drinks", {
           method: "POST",
@@ -29,8 +29,7 @@ export default function NewDrink({ mixologists, onAddDrink }){
         })
           .then(r => r.json())
           .then(newDrink => {
-            console.log(newDrink) // 
-            // onAddDrink(newDrink)
+            onAddDrink(newDrink)
           })
       }
 
@@ -47,6 +46,7 @@ export default function NewDrink({ mixologists, onAddDrink }){
     <div>
       <hr className="Separator"/>
       <h2>Add drink</h2>
+      {/* Clear form fields */}
       <form className="Form" onSubmit={handleSubmit}>
         <label>Name
           <input
@@ -74,6 +74,8 @@ export default function NewDrink({ mixologists, onAddDrink }){
         </label>
         <label>
           Created by:
+          {/* - Set initial state to "pick mixologist OR a default (last created?) value"
+          - set as a required value */}
           <select 
             value={mixologistId}
             onChange={e => setMixologistId(e.target.value)} // parseInt
