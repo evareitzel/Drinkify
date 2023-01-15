@@ -107,7 +107,13 @@ export default function App() {
         {renderMixologists}
         <NewDrink mixologists={mixologists} onAddDrink={handleAddDrink} /> 
         <NewMixologist onAddMixologist={handleAddMixologist} />
-        <LatestDrinks latestDrinks={latestDrinks} />
+        <LatestDrinks 
+          drinks={latestDrinks}
+          // mixologistId={mixologist.id}      
+          // mixologistObj = {mixologist}
+          onUpdateDrink={handleUpdateDrink}
+          onDeleteDrink={handleDeleteDrink}
+     />
       </div>
     </div>
   )}
