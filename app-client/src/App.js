@@ -23,15 +23,24 @@ export default function App() {
   }, [])
   // console.log(latestDrinks)
 
-  const renderMixologists = mixologists.map(mixologist => (
-    <Mixologist 
-      key={mixologist.id}
-      mixologistId={mixologist.id}      
-      mixologistObj = {mixologist}
-      onUpdateDrink={handleUpdateDrink}
+  function handleDeleteDrink(id, mixologist_id){
 
-    />
-  ))
+    const found = mixologists.find(mixologist => {
+      return mixologist.id === mixologist_id
+    })
+    
+    const updatedDrinks = found.drinks.filter(drink => {
+      return drink.id !== id
+    })
+
+    const updated = mixologists.map(mixologist =>{
+      if(mixologist.id === mixologist_id){
+        mixologist.drinks = updatedDrinks
+      }    
+      return mixologist
+    })
+    setMixologists(updated)
+  }
 
   function handleUpdateDrink(updatedDrink){
     const found = mixologists.find(mixologist => (
@@ -54,8 +63,21 @@ export default function App() {
   }
 
   function handleAddMixologist(newMixologist){
+    newMixologist.drinks = [] // add Drinks arr
     setMixologists([...mixologists, newMixologist])
   }
+
+  console.log(mixologists)
+
+  const renderMixologists = mixologists.map(mixologist => (
+    <Mixologist 
+      key={mixologist.id}
+      mixologistId={mixologist.id}      
+      mixologistObj = {mixologist}
+      onUpdateDrink={handleUpdateDrink}
+      onDeleteDrink={handleDeleteDrink}
+    />
+  ))
 
   return (
     <div className="App">

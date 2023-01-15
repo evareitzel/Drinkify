@@ -3,8 +3,6 @@ import React, { useState } from "react"
 export default function NewMixologist({ onAddMixologist }){
   const [name, setName] = useState("")
 
-  console.log(name)
-
   function handleSubmit(e){
     e.preventDefault()
 
@@ -14,7 +12,7 @@ export default function NewMixologist({ onAddMixologist }){
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        name: name,
+        name: name
       }),
     })
     .then(r => r.json())

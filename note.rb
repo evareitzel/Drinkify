@@ -852,3 +852,80 @@ export default function Search(){
 #   mixologist = Mixologist.find(params[:id])
 #   mixologist.to_json(include: :drinks)
 # end
+
+#
+#
+#
+# from Drink.js
+
+// function show_author(user_id){
+  // const found = users.find(user =>
+  //   user.id === user_id)
+//   return found.name
+// }
+
+
+{/* <img src={image} width="350" alt={name} className="Image" /> */}
+
+{/* <form>
+  <label>
+    Author:
+    <input type="select">{username}</input> 
+  </label>
+</form> */}
+
+#
+#
+#
+# process notes for handleDeleteDrink in App.js 
+// const filtered = found.drinks.filter(drink =>{
+  //   return drink.id !== id
+  // })
+  // console.log(filtered)
+
+  // `${drink.name}
+  // const updatedDrinks = drinksArr.filter(drink => drink.id !== id)
+  // mixologists.find()
+  // const found = mixologists.find(mixologist => {
+  //   mixologist.drinks.include?(drink.id === id)
+  //   found.drinks.filter(drink => {
+  //     drink.id !== id
+  //   })
+  //   {
+    //       mixologist.drinks = updatedDrinks
+    //       return mixologist
+    //     }else{
+    //       return mixologist
+    //     }
+    //   })
+    //   setMixologists(updatedMixologists)
+    // }
+  
+// const updatedMixologists = mixologists.map(mixologist => {
+//   if(mixologist.id === found.id){
+//     mixologist.drinks = updatedDrinks
+//     return mixologist
+//   }else{
+//     return mixologist
+//   }
+// })
+// setMixologists(updatedMixologists)
+
+#
+#
+#
+# notes from AddMixologist
+
+  # application_controller.rb
+    # drinks: []
+    # drinks: params[:drinks] # test
+
+  # NewMixologist.js
+    // drinks: [
+      //   {
+      //     name: "Your first drink",
+      //     instructions: "Instructions go here",
+      //     ingredients: "Ingredients go here",
+      //   }
+      // ] // test
+

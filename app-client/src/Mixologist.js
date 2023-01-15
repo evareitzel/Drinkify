@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
 import Drink from "./Drink"
 
-export default function Mixologist({ mixologistObj, onUpdateDrink }) {
+export default function Mixologist({ mixologistObj, onUpdateDrink, onDeleteDrink }) {
   
   // remove state
   const [cards, setCards] = useState(false)
@@ -13,7 +13,7 @@ export default function Mixologist({ mixologistObj, onUpdateDrink }) {
       key={drink.id} 
       drink={drink} 
       onUpdateDrink={onUpdateDrink}
-      onDeleteDrink={handleDeleteDrink}
+      onDeleteDrink={onDeleteDrink}
       mixologist={mixologistObj}
     />
   })
@@ -23,13 +23,6 @@ export default function Mixologist({ mixologistObj, onUpdateDrink }) {
   ? renderDrinks
   : null 
   // <p>{mixologist.name} has no drinks yet!</p> // add drink btn
-
-
-  // Fix DESTROY action
-  // Fetch Delete is wkg
-  function handleDeleteDrink(id){
-    const updatedDrinks = drinksArr.filter(drink => drink.id !== id)
-  }  
 
   return(
     <div>

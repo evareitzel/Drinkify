@@ -12,7 +12,9 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/mixologists' do
-    mixologist = Mixologist.create(name: params[:name])
+    mixologist = Mixologist.create(
+      name: params[:name],
+    )
     mixologist.to_json
   end
 
@@ -25,7 +27,7 @@ class ApplicationController < Sinatra::Base
     drink = Drink.create(
       name: params[:name],
       instructions: params[:instructions],
-      mixologist_id: params[:mixologist_id]
+      mixologist_id: params[:mixologist_id],
     )
     drink.to_json
   end

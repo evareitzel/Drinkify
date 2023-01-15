@@ -5,15 +5,15 @@ export default function DrinkList({drinks, mixologist, onUpdateDrink, onDeleteDr
 
   const renderDrinks = 
   console.log(drinks)
-    drinks.map(drink => (
-          <Drink 
-            key={drink.id} 
-            drink={drink} 
-            onUpdateDrink={onUpdateDrink}
-            onDeleteDrink={onDeleteDrink}
-            mixologist={mixologist}
-          />
-        ))
+    // drinks.map(drink => (
+    //       <Drink 
+    //         key={drink.id} 
+    //         drink={drink} 
+    //         onUpdateDrink={onUpdateDrink}
+    //         onDeleteDrink={onDeleteDrink}
+    //         mixologist={mixologist}
+    //       />
+    //     ))
 
   return(
     <div >

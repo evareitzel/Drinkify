@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
-export default function EditDrink({ drink, onUpdateDrink }){
+export default function EditDrink({ drink, onUpdateDrink }) {
+
   const { name, id, ingredients, instructions } = drink
   const [drinkName, setDrinkName] = useState(name)
   const [drinkIngredients, setDrinkIngredients] = useState(ingredients)
   const [drinkInstructions, setDrinkInstructions] = useState(instructions)
 
-
-  function handleFormSubmit(e){
+  function handleFormSubmit(e) {
     e.preventDefault();
-    console.log(e.target.value)
+    window.alert(`${drinkName} updated!`)
 
     fetch(`http://localhost:9292/drinks/${id}`, {
       method: "PATCH",
@@ -20,45 +20,42 @@ export default function EditDrink({ drink, onUpdateDrink }){
         name: drinkName,
         instructions: drinkInstructions,
         ingredients: drinkIngredients,
-
       }),
     })
-    .then(r => r.json())
-    .then(updatedDrink => onUpdateDrink(updatedDrink))
+      .then(r => r.json())
+      .then(updatedDrink => onUpdateDrink(updatedDrink))
   }
 
-  // console.log(drinkIngredients)
-
-  return(
+  return (
     <form onSubmit={handleFormSubmit} >
       <br />
       <label>Name
-        <input 
-          className="Form-input" 
+        <input
+          className="Form-input"
           type="text"
           name="name"
           value={drinkName}
-          onChange={e => setDrinkName(e.target.value)}      
+          onChange={e => setDrinkName(e.target.value)}
         />
       </label>
       <label>
         Ingredients
-        <input 
-          className="Form-input" 
+        <input
+          className="Form-input"
           type="text"
           name="ingredients"
           value={drinkIngredients}
-          onChange={e => setDrinkIngredients(e.target.value)}      
-      />
+          onChange={e => setDrinkIngredients(e.target.value)}
+        />
       </label>
       <label>
         Instructions
-        <input 
-          className="Form-input" 
+        <input
+          className="Form-input"
           type="text"
           name="instructions"
           value={drinkInstructions}
-          onChange={e => setDrinkInstructions(e.target.value)}      
+          onChange={e => setDrinkInstructions(e.target.value)}
         />
       </label>
 
