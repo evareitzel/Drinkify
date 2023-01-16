@@ -1,20 +1,20 @@
 import React, {useEffect, useState} from "react"
 import Drink from "./Drink"
 
-export default function Mixologist({ mixologistObj, onUpdateDrink, onDeleteDrink }) {
+export default function Mixologist({ mixologist, onUpdateDrink, onDeleteDrink }) {
   
   // remove state
   const [cards, setCards] = useState(false)
 
-  const drinksArr = mixologistObj.drinks
+  const drinks = mixologist.drinks
 
-  const renderDrinks = drinksArr.map(drink => {
+  const renderDrinks = drinks.map(drink => {
     return <Drink 
       key={drink.id} 
       drink={drink} 
       onUpdateDrink={onUpdateDrink}
       onDeleteDrink={onDeleteDrink}
-      mixologist={mixologistObj}
+      mixologist={mixologist}
     />
   })
   
@@ -27,7 +27,7 @@ export default function Mixologist({ mixologistObj, onUpdateDrink, onDeleteDrink
   return(
     <div>
       <a className="App-link" onClick={() => setCards(!cards)}>
-        {mixologistObj.name}
+        {mixologist.name}
         {cards ? ' 🡨' : ' 🡪'}
       </a>
       {showCards}

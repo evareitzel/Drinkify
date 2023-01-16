@@ -1003,4 +1003,13 @@ Beloved by motorcycle gangs <3
 # index.js
 // import App from './App';
 
-
+#
+#
+#
+# //HELPER FUNC NOTES
+function findMixologist(drink){
+  mixologists.find(mixologist => {
+    return mixologist.id === drink.mixologist_id
+  })
+}
+const found = findMixologist(newDrink) // from handleAddDrink

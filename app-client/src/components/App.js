@@ -24,13 +24,11 @@ export default function App() {
   }, [mixologists]) // this effect synchronzes with mixologists state
 
   function handleAddDrink(newDrink) {
-    // find mixologist drink belongs to
+    
     const found = mixologists.find(mixologist => (
       mixologist.id == newDrink.mixologist_id
     ))
 
-    // add to mixoligist's drinks arr
-    // update Mixologist state
     const updated = mixologists.map(mixologist => {
       if(mixologist.id === found.id){
         mixologist.drinks = [...mixologist.drinks, newDrink]
@@ -43,6 +41,7 @@ export default function App() {
   }
 
   function handleUpdateDrink(updatedDrink){
+    
     const found = mixologists.find(mixologist => (
       mixologist.id == updatedDrink.mixologist_id
     ))
@@ -63,7 +62,7 @@ export default function App() {
   }
 
   function handleDeleteDrink(id, mixologist_id){
-
+   
     const found = mixologists.find(mixologist => {
       return mixologist.id === mixologist_id
     })
@@ -79,8 +78,6 @@ export default function App() {
       return mixologist
     })
     setMixologists(updated)
-    // setLatestDrinks()
-    // setLatestDrinks(latestDrinks.splice(0, 4)) 
   }
 
   function handleAddMixologist(newMixologist){
@@ -92,7 +89,7 @@ export default function App() {
     <Mixologist 
       key={mixologist.id}
       mixologistId={mixologist.id}      
-      mixologistObj = {mixologist}
+      mixologist = {mixologist}
       onUpdateDrink={handleUpdateDrink}
       onDeleteDrink={handleDeleteDrink}
     />
@@ -108,11 +105,7 @@ export default function App() {
         <NewMixologist onAddMixologist={handleAddMixologist} />
         <LatestDrinks 
           drinks={latestDrinks}
-          // mixologistId={mixologist.id}      
-          // mixologistObj = {mixologist}
-          onUpdateDrink={handleUpdateDrink}
-          onDeleteDrink={handleDeleteDrink}
-     />
+        />
       </div>
     </div>
   )}
