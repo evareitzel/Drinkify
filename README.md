@@ -5,8 +5,7 @@ Drinkify is an application where mixologists can share their drink recipes.
 This application was built for Flatiron's Software Engineering Bootcamp Phase 3 Project.
 
 Introductory video: 
-[https://vimeo.com/797490708]
-(https://vimeo.com/797490708)
+https://vimeo.com/797490708
 
 ## Getting started
 
@@ -41,10 +40,8 @@ This will run your server on port
 [http://localhost:9292](http://localhost:9292).
 
 ### API Endpoints
-- [http://localhost:9292/mixologists]
-  (http://localhost:9292/mixologists)
-- [http://localhost:9292/drinks]
-  (http://localhost:9292/drinks)
+- http://localhost:9292/mixologists
+- http://localhost:9292/drinks
 
 ## Introduction
 
