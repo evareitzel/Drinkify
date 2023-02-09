@@ -40,8 +40,10 @@ This will run your server on port
 [http://localhost:9292](http://localhost:9292).
 
 ### API Endpoints
-- http://localhost:9292/mixologists
-- http://localhost:9292/drinks
+- [/mixologists]
+  (http://localhost:9292/mixologists)
+- [/drinks]
+  (http://localhost:9292/drinks)
 
 ## Introduction
 
