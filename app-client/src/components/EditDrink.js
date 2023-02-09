@@ -33,7 +33,6 @@ export default function EditDrink({ drink, onUpdateDrink }) {
         <input
           onChange={e => setDrinkName(e.target.value)}
           type="text"
-          // name="name"
           value={drinkName}
           required
           className="Form-input"
@@ -44,7 +43,6 @@ export default function EditDrink({ drink, onUpdateDrink }) {
         <input
           onChange={e => setDrinkIngredients(e.target.value)}
           type="text"
-          // name="ingredients"
           value={drinkIngredients}
           className="Form-input"
         />
@@ -54,7 +52,6 @@ export default function EditDrink({ drink, onUpdateDrink }) {
         <textarea rows="4"
           onChange={e => setDrinkInstructions(e.target.value)}
           type="text"
-          // name="instructions"
           value={drinkInstructions}
           className="Form-input"
         />

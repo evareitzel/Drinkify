@@ -43,10 +43,10 @@ class ApplicationController < Sinatra::Base
     drink.to_json
   end
 
-  delete "/drinks/:id" do
+  delete '/drinks/:id' do
     drink = Drink.find(params[:id])
     drink.destroy
     drink.to_json
-  end
+  end 
 
 end

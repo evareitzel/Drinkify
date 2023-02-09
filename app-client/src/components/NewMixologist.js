@@ -25,23 +25,25 @@ export default function NewMixologist({ onAddMixologist }){
   }
 
   return(
-    <form onSubmit={handleSubmit} className="Form">
+    <div>
       <hr className="Separator"/>
       <h2>Add mixologist</h2>
-      <label>
-        Name
-        <input 
-          onChange={e => setName(e.target.value)}
-          placeholder="Your name"
-          type="text"
-          value={name}
-          required
-          className="Form-input"
-        />
-      </label>
-      <div className="Button-wrapper">
-        <button type="submit" className="Button">Add mixologist</button>
-      </div>
-    </form>
+      <form onSubmit={handleSubmit} className="Form">
+        <label>
+          Name
+          <input 
+            onChange={e => setName(e.target.value)}
+            placeholder="Your name"
+            type="text"
+            value={name}
+            required
+            className="Form-input"
+          />
+        </label>
+        <div className="Button-wrapper">
+          <button type="submit" className="Button">Add mixologist</button>
+        </div>
+      </form>
+    </div>
   )
 }
