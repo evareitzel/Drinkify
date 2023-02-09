@@ -9,7 +9,7 @@ https://vimeo.com/797490708
 
 ## Getting started
 
-[**Fork and clone**] this repository to get started. Then from the backend directory, run `bundle install` to install the gems.
+Fork and clone this repository to get started. Then from the backend directory, run `bundle install` to install the gems.
 
 ### Frontend
 
