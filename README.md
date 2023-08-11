@@ -1,4 +1,5 @@
 # Drinkify
+Phase 3 Project for Flatiron School
 
 Drinkify is an application where mixologists can share their drink recipes.
 
